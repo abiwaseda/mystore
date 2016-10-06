@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import {FormattedMessage, FormattedNumber} from 'react-intl';
+import StripeCheckout from 'react-stripe-checkout';
 
 // Flux
 import IntlStore from '../../../stores/Application/IntlStore';
@@ -90,6 +91,11 @@ class CheckoutSummary extends React.Component {
                             <FormattedMessage message={intlStore.getMessage(intlData, 'checkout')} 
                                               locales={intlStore.getCurrentLocale()} />
                         </Button>
+                        <h1>Hello Sir</h1>
+                        <StripeCheckout
+                                  token={this.props.onStripeClick}
+                                  stripeKey="pk_test_t0BfAy7tqOvA3O7XYDUMbTJZ"
+                                />
                     </div>
                 </div>
             </div>

@@ -5,6 +5,7 @@ import React from 'react';
 import connectToStores from 'fluxible-addons-react/connectToStores';
 import {FormattedMessage} from 'react-intl';
 import {Link} from 'react-router';
+import StripeCheckout from 'react-stripe-checkout';
 
 import config from '../../../config';
 
@@ -327,6 +328,18 @@ class Checkout extends React.Component {
         this.context.executeAction(createCart);
     };
 
+    onToken = (token) => {
+      fetch('http://localhost:8000/v1/charges', {
+        method: 'POST',
+        headers: new Headers({
+        'Content-Type': 'application/json; charset=UTF-8'
+         }),
+        body: JSON.stringify(token),
+      }).then(token => {
+        alert(`We are in business, ${token.email}`);
+      });
+    }
+
     //*** Template ***//
 
     render() {
@@ -482,7 +495,13 @@ class Checkout extends React.Component {
                                 <CheckoutSummary checkout={this.state.checkout}
                                                  useShippingAddressForBilling={this.state.useShippingAddressForBilling}
                                                  readyForCheckout={this.state.checkout.ready && this.state.paymentInstrument.ready}
+                                                 onStripeClick={this.onToken}
                                                  onCheckoutClick={this.handleCheckoutClick}/>
+                                                 <StripeCheckout
+                                                           token={this.onToken}
+                                                           stripeKey="pk_test_t0BfAy7tqOvA3O7XYDUMbTJZ"
+                                                         />
+                                
                             </CheckoutSection>
                         </div>
                     </div>
