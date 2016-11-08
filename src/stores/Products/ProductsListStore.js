@@ -37,6 +37,7 @@ class ProductsListStore extends BaseStore {
     }
 
     rehydrate(state) {
+        console.log(" rehydrate state of product store");
         this.products = state.products;
     }
 

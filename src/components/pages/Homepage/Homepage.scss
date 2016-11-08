@@ -15,7 +15,7 @@
 .homepage__featured {
     flex-wrap: wrap;
     align-self: center;
-    width: 20%;
+    width: 100%;
     min-width: 250px;
     @include breakpoint(handhelds) {
         display: flex;
@@ -28,6 +28,7 @@
 .homepage__featured-block {
     display: flex;
     margin-top: 20px;
+    justify-content: center;
 }
 
 .homepage__banners {

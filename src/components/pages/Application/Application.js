@@ -84,6 +84,7 @@ class Application extends React.Component {
     render() {
         
         let intlStore = this.context.getStore(IntlStore);
+        let routeParams = {locale: this.context.getStore(IntlStore).getCurrentLocale()};
 
         // Main navigation menu items
         let collections = this.state.navCollections.map(function (collection) {
@@ -96,6 +97,7 @@ class Application extends React.Component {
                 }
             };
         });
+        collections =[{name:"Travel", to:"/"+routeParams.locale},{name:"Shop", to:"/shop"}]
 
         // Compute CSS classes for the overlay
         let overlayClass = 'application__overlay';

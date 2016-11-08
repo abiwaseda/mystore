@@ -34,12 +34,11 @@ class DesktopHeader extends React.Component {
     };
 
     //*** Initial State ***//
-
     state = {
         cartTotalItems: this.context.getStore(CartStore).getTotalItems(),
         user: this.context.getStore(AccountStore).getAccountDetails(),
         openedDrawer: this.context.getStore(DrawerStore).getOpenedDrawer(),
-        collectionsTreeMenuEnabled: false
+        collectionsTreeMenuEnabled: false,
     };
 
     //*** Component Lifecycle ***//

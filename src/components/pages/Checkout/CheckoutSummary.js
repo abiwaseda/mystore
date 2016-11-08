@@ -10,6 +10,7 @@ import IntlStore from '../../../stores/Application/IntlStore';
 
 // Required components
 import Button from '../../common/buttons/Button';
+import ButtonStripe from '../../common/buttons/ButtonStripe';
 import Heading from '../../common/typography/Heading';
 import OrderSummary from '../../common/orders/OrderSummary';
 import Text from '../../common/typography/Text';
@@ -87,15 +88,12 @@ class CheckoutSummary extends React.Component {
                 }
                 <div className="checkout-summary__row checkout-summary__submit">
                     <div className="checkout-summary__submit-button">
+                        <ButtonStripe type="primary" disabled={!this.props.readyForCheckout} onClick={this.props.onStripeClick}>
+                        </ButtonStripe>
                         <Button type="primary" disabled={!this.props.readyForCheckout} onClick={this.props.onCheckoutClick}>
-                            <FormattedMessage message={intlStore.getMessage(intlData, 'checkout')} 
+                            <FormattedMessage message={intlStore.getMessage(intlData, 'checkout')}
                                               locales={intlStore.getCurrentLocale()} />
                         </Button>
-                        <h1>Hello Sir</h1>
-                        <StripeCheckout
-                                  token={this.props.onStripeClick}
-                                  stripeKey="pk_test_t0BfAy7tqOvA3O7XYDUMbTJZ"
-                                />
                     </div>
                 </div>
             </div>

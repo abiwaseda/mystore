@@ -2,6 +2,7 @@
  * Imports
  */
 import React from 'react';
+import StripeCheckout from 'react-stripe-checkout';
 
 // Instantiate logger
 let debug = require('debug')('nicistore');
@@ -21,10 +22,10 @@ class Button extends React.Component {
 
     //*** View Controllers ***//
 
-    handleClick = () => {
-        if (this.props.disabled !== true && this.props.loading !== true) {
-            this.props.onClick();
-        }
+    handleClick = (token) => {
+//        if (this.props.disabled !== true && this.props.loading !== true) {
+            this.props.onClick(token);
+//        }
     };
 
     //*** Template ***//
@@ -39,9 +40,9 @@ class Button extends React.Component {
             buttonClass += ' button-default';
         }
 
-        if (this.props.disabled === true) {
-            buttonClass += ' button--disabled';
-        }
+//        if (this.props.disabled === true) {
+//            buttonClass += ' button--disabled';
+//        }
 
         if (this.props.loading === true) {
             buttonClass += ' button--disabled';
@@ -58,10 +59,11 @@ class Button extends React.Component {
         }
 
         return (
-            <button className={buttonClass} onClick={this.handleClick}>
-                {this.props.children}
-            </button>
-         );
+
+            <StripeCheckout className='button button-primary' token={this.handleClick}
+                      stripeKey="pk_test_t0BfAy7tqOvA3O7XYDUMbTJZ"
+                     />
+        );
     }
 }
 

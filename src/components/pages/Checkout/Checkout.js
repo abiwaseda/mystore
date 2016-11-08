@@ -20,6 +20,7 @@ import clearOrder from '../../../actions/Orders/clearOrder';
 import createCart from '../../../actions/Cart/createCart';
 import createCheckout from '../../../actions/Checkout/createCheckout';
 import createOrder from '../../../actions/Orders/createOrder';
+import createStripeOrder from '../../../actions/Orders/createStripeOrder';
 import updateCheckout from '../../../actions/Checkout/updateCheckout';
 
 // Required components
@@ -328,7 +329,14 @@ class Checkout extends React.Component {
         this.context.executeAction(createCart);
     };
 
-    onToken = (token) => {
+    //
+    // Stripe
+    //
+
+    onToken = (tokenn) => {
+    if (tokenn != null){
+      console.log("token : " + tokenn.id);
+      /*
       fetch('http://localhost:8000/v1/charges', {
         method: 'POST',
         headers: new Headers({
@@ -336,8 +344,29 @@ class Checkout extends React.Component {
          }),
         body: JSON.stringify(token),
       }).then(token => {
-        alert(`We are in business, ${token.email}`);
+//      this.setState({showOrderCreatedModal: true});
+//        alert(`We are in business, ${token.email}`);
+        console.log("Running request-new-cart");
+        this.requestNewCart();
       });
+       */
+        let payload = {
+            token: tokenn,
+            checkoutId: this.state.checkout.id,
+            cartAccessToken: this.state.cart.accessToken,
+            paymentDetails: {
+                amount: this.state.checkout.total,
+                currency: this.state.checkout.currency,
+                chargeType: this.state.checkout.paymentMethod,
+                provider: "Stripe",
+                instrument: this.state.paymentInstrument.params || {}
+            }
+        };
+        this.context.executeAction(createStripeOrder, payload);
+
+      } else {
+        alert('Error Occured payload not received');
+      }
     }
 
     //*** Template ***//
@@ -497,11 +526,6 @@ class Checkout extends React.Component {
                                                  readyForCheckout={this.state.checkout.ready && this.state.paymentInstrument.ready}
                                                  onStripeClick={this.onToken}
                                                  onCheckoutClick={this.handleCheckoutClick}/>
-                                                 <StripeCheckout
-                                                           token={this.onToken}
-                                                           stripeKey="pk_test_t0BfAy7tqOvA3O7XYDUMbTJZ"
-                                                         />
-                                
                             </CheckoutSection>
                         </div>
                     </div>
