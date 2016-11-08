@@ -335,21 +335,7 @@ class Checkout extends React.Component {
 
     onToken = (tokenn) => {
     if (tokenn != null){
-      console.log("token : " + tokenn.id);
-      /*
-      fetch('http://localhost:8000/v1/charges', {
-        method: 'POST',
-        headers: new Headers({
-        'Content-Type': 'application/json; charset=UTF-8'
-         }),
-        body: JSON.stringify(token),
-      }).then(token => {
-//      this.setState({showOrderCreatedModal: true});
-//        alert(`We are in business, ${token.email}`);
-        console.log("Running request-new-cart");
-        this.requestNewCart();
-      });
-       */
+      console.log("token : " + tokenn.id); // for debug, remove in prod
         let payload = {
             token: tokenn,
             checkoutId: this.state.checkout.id,

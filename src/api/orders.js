@@ -26,7 +26,6 @@ class OrdersAPI {
         if (this.getAuthToken()) {
             request.set('Authorization', this.getAuthToken());
         }
-        console.log(" run wrap and request");
         request.end(function (err, result) {
             if (err) {
                 reject({status: err.status, result: (result) ? result.body : null});
@@ -56,19 +55,10 @@ class OrdersAPI {
     createStripeOrder(token) {
 
         return new Promise((resolve, reject) => {
-//            var payload;
-            console.log("id 1 " + token.id);
-            console.log("running stripe order api");
-//            if (token) {
-//                payload = Object.assign(payload, token);
-//            }
             let payload = JSON.stringify(token);
             console.log("Next");
             console.log("id 2 " + payload.id);
             let request = superagent.post(`${this.baseUrl}/charges`).set({'Content-Type': 'application/json; charset=UTF-8'}).send(payload);
-//            if (cartAccessToken) {
-//                request.query({accessToken: cartAccessToken});
-//            }
             this._wrapAndRequest(request, resolve, reject);
         });
     }

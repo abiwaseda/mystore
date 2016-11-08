@@ -131,11 +131,8 @@ server.use(async function (req, res, next) {
 
         debug('Executing navigate action');
         Router.run(app.getComponent(), req.originalUrl, async function (Handler, state) {
-//            console.log( "value of Handler" + JSON.parse(JSON.stringify(Handler)));
-//            console.log( "value of State" + JSON.parse(JSON.stringify(state)));
             debug('Handler', Handler);
             debug('State', state);
-//            debug('Context ', context);
             // Trigger fetching and wait for the data required by the components of the given route
             await fetchData(context, state);
 
