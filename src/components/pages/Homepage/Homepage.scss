@@ -5,6 +5,11 @@
  * Featured Collections
  */
 
+.homepage{
+    max-width: 950px;
+    margin: 30px;
+}
+
 .homepage__cta {
     display: flex;
     @include breakpoint(handhelds) {
@@ -32,6 +37,7 @@
 }
 
 .homepage__banners {
+    padding-left: 25px;
     align-self: center;
     width: 100%;
     @include breakpoint(handhelds) {

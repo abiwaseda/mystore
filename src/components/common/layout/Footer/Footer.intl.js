@@ -3,7 +3,7 @@ export default {
         infoTitle: 'Info',
         newsletterTitle: 'News & Updates',
         socialTitle: 'Social',
-        storesTitle: 'Our Stores'
+        storesTitle: 'Our Offices'
     },
     pt: {
         infoTitle: 'Informações',

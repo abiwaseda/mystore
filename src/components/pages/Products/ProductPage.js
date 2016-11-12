@@ -235,6 +235,12 @@ class ProductPage extends React.Component {
             }
         }
 
+        let mapobject = function(object, callback) {
+          return Object.keys(object).map(function (key) {
+            return callback(key, object[key]);
+          });
+        }
+
         //
         // Return
         //
@@ -250,6 +256,14 @@ class ProductPage extends React.Component {
                                     message={intlStore.getMessage(this.state.product.name)}
                                     locales={intlStore.getCurrentLocale()} />
                             </Breadcrumbs>
+                        </div>
+
+                        <div className="product-page__name" itemProp="name">
+                            <Heading size="large">
+                                <FormattedMessage
+                                    message={intlStore.getMessage(this.state.product.name)}
+                                    locales={intlStore.getCurrentLocale()} />
+                            </Heading>
                         </div>
 
                         <div className="product-page__product" itemScope itemType="http://schema.org/Product">
@@ -268,13 +282,7 @@ class ProductPage extends React.Component {
                                 }
                             </div>
                             <div className="product-page__details">
-                                <div className="product-page__name" itemProp="name">
-                                    <Heading size="large">
-                                        <FormattedMessage
-                                            message={intlStore.getMessage(this.state.product.name)}
-                                            locales={intlStore.getCurrentLocale()} />
-                                    </Heading>
-                                </div>
+
                                 {this.state.product.pricing ?
                                     <div className="product-page__price" itemProp="offers" itemScope itemType="http://schema.org/Offer">
                                         <div style={{display: 'none'}} itemProp="price">
@@ -283,18 +291,38 @@ class ProductPage extends React.Component {
                                         <div style={{display: 'none'}} itemProp="priceCurrency">
                                             {this.state.product.pricing.currency}
                                         </div>
-                                        <div>
-                                            <Text size="medium" weight="bold">
-                                                <FormattedNumber
-                                                    value={this.state.product.pricing.retail}
-                                                    style="currency"
-                                                    currency={this.state.product.pricing.currency} />
-                                            </Text>
-                                        </div>
                                     </div>
                                     :
                                     null
                                 }
+                                <div className="product-table">
+                                    <table>
+                                        <tr>
+                                            <th>Price</th>
+                                            <td>
+                                                <Text size="medium" weight="bold">
+                                                    <FormattedNumber
+                                                        value={this.state.product.pricing.retail}
+                                                        style="currency"
+                                                        currency={this.state.product.pricing.currency} />
+                                                </Text>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Location</th>
+                                            <td>{this.state.product.others.location}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Duration</th>
+                                            <td>{this.state.product.others.duration}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Plan Includes</th>
+                                            <td>{this.state.product.others.includes}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+
                                 <div className="product-page__sku">
                                     <Text size="small">
                                         Ref: <span itemProp="sku">{this.state.product.sku}</span>
@@ -324,22 +352,7 @@ class ProductPage extends React.Component {
                                     </div>
                                 </div>
 
-                                <div className="product-page__description">
-                                    <div className="product-page__description-label">
-                                        <Heading size="medium">
-                                            <FormattedMessage
-                                                message={intlStore.getMessage(intlData, 'descriptionLabel')}
-                                                locales={intlStore.getCurrentLocale()} />
-                                        </Heading>
-                                    </div>
-                                    <div className="product-page__description-content" itemProp="description">
-                                        <Text size="small">
-                                            <FormattedMessage
-                                                message={intlStore.getMessage(this.state.product.description)}
-                                                locales={intlStore.getCurrentLocale()} />
-                                        </Text>
-                                    </div>
-                                </div>
+
 
                                 {this.state.contents.map(function (content) {
                                     return (
@@ -349,19 +362,66 @@ class ProductPage extends React.Component {
                                     );
                                 })}
                             </div>
-                            
-                            {!this.state.suggestionsLoading && this.state.suggestions.length === 0 ?
-                                <div className="product-page__suggestions product-page__suggestions--no-border"></div>
-                                :
-                                <div className="product-page__suggestions">
-                                    <ProductSuggestions products={this.state.suggestions} loading={this.state.suggestionsLoading}>
-                                        <FormattedMessage
-                                            message={intlStore.getMessage(intlData, 'crossSell')}
-                                            locales={intlStore.getCurrentLocale()} />
-                                    </ProductSuggestions>
-                                </div>
-                            }
                         </div>
+
+                        <div className="product-page__description">
+                            <div className="product-page__description-label">
+                                <Heading size="medium">
+                                    <FormattedMessage
+                                        message={intlStore.getMessage(intlData, 'descriptionLabel')}
+                                        locales={intlStore.getCurrentLocale()} />
+                                </Heading>
+                            </div>
+                            <div className="product-page__description-content" itemProp="description">
+                                <Text size="small">
+                                    <FormattedMessage
+                                        message={intlStore.getMessage(this.state.product.description)}
+                                        locales={intlStore.getCurrentLocale()} />
+                                </Text>
+                            </div>
+                        </div>
+
+                        {this.state.product.others.schedule && Object.keys(this.state.product.others.schedule).length !== 0 ?
+                        <div>
+                            <div className="product-page__description product-page__description-label">
+                                <Heading size="medium">
+                                    <FormattedMessage
+                                        message={intlStore.getMessage(intlData, 'scheduleLabel')}
+                                        locales={intlStore.getCurrentLocale()} />
+                                </Heading>
+                            </div>
+                            <div className="product-table">
+                                <table>
+                                    <tr>
+                                        <th>Day</th>
+                                        <th>Schedule</th>
+                                    </tr>
+                                    {mapobject(this.state.product.others.schedule, (key, value) => {
+                                        return (
+                                            <tr>
+                                                <td>{key}</td>
+                                                <td>{value}</td>
+                                            </tr>
+                                        );
+                                    })}
+                                </table>
+                             </div>
+                         </div>
+                        :
+                        null
+                        }
+
+                        {!this.state.suggestionsLoading && this.state.suggestions.length === 0 ?
+                            <div className="product-page__suggestions product-page__suggestions--no-border"></div>
+                            :
+                            <div className="product-page__suggestions">
+                                <ProductSuggestions products={this.state.suggestions} loading={this.state.suggestionsLoading}>
+                                    <FormattedMessage
+                                        message={intlStore.getMessage(intlData, 'crossSell')}
+                                        locales={intlStore.getCurrentLocale()} />
+                                </ProductSuggestions>
+                            </div>
+                        }
                     </div>
                 }
             </div>
