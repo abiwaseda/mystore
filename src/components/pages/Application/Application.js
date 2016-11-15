@@ -97,8 +97,6 @@ class Application extends React.Component {
                 }
             };
         });
-        //collections =[{name:"Travel", to:"/"+routeParams.locale},{name:"Shop", to:"/shop"}]
-        collections =[{name:"Travel", to:"/"+routeParams.locale}];
 
         // Compute CSS classes for the overlay
         let overlayClass = 'application__overlay';

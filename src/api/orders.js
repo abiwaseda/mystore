@@ -56,8 +56,6 @@ class OrdersAPI {
 
         return new Promise((resolve, reject) => {
             let payload = JSON.stringify(token);
-            console.log("Next");
-            console.log("id 2 " + payload.id);
             let request = superagent.post(`${this.baseUrl}/charges`).set({'Content-Type': 'application/json; charset=UTF-8'}).send(payload);
             this._wrapAndRequest(request, resolve, reject);
         });

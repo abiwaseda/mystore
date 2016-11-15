@@ -23,9 +23,9 @@ class Button extends React.Component {
     //*** View Controllers ***//
 
     handleClick = (token) => {
-//        if (this.props.disabled !== true && this.props.loading !== true) {
+        if (this.props.disabled !== true && this.props.loading !== true) {
             this.props.onClick(token);
-//        }
+        }
     };
 
     //*** Template ***//
@@ -34,15 +34,15 @@ class Button extends React.Component {
 
         let buttonClass = 'button';
 
-        if (['default', 'primary'].indexOf(this.props.type) != -1) {
+        if (['stripe', 'primary'].indexOf(this.props.type) != -1) {
             buttonClass += ` button-${this.props.type}`;
         } else {
             buttonClass += ' button-default';
         }
 
-//        if (this.props.disabled === true) {
-//            buttonClass += ' button--disabled';
-//        }
+        if (this.props.disabled === true) {
+            buttonClass += ' button--disabled';
+        }
 
         if (this.props.loading === true) {
             buttonClass += ' button--disabled';
@@ -60,7 +60,7 @@ class Button extends React.Component {
 
         return (
 
-            <StripeCheckout className='button button-primary' token={this.handleClick}
+            <StripeCheckout className={buttonClass} token={this.handleClick}
                       stripeKey="pk_test_t0BfAy7tqOvA3O7XYDUMbTJZ"
                      />
         );

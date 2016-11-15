@@ -19,8 +19,7 @@ let debug = require('debug')('nicistore');
  */
 export default function createStripeOrder(context, payload, done) {
     context.dispatch(orderActions.ORDER_CREATE);
-    context.api.orders.createStripeOrder(payload.token).then(function orderCreateSuccess(order) {
-        console.log("create stripe api promise called success");
+    context.api.orders.create(payload.checkoutId, payload.cartAccessToken).then(function orderCreateSuccess(order) {
         function dispatchOrderCreatedSuccessfully() {
 
             let checkout = context.getStore(CheckoutStore).getCheckout();
@@ -68,29 +67,20 @@ export default function createStripeOrder(context, payload, done) {
             done && done();
         }
 
-        // 1) Payment method provided by switch
+        // 1) Payment method provided by stripe
         // Create charge before notifying of successful order creation
-        if (payload.paymentDetails.provider === 'switch') {
-            let eventsAPIBaseUrl = config.api.atlas.baseUrl;
-            let switchJs = new SwitchJs(config.switchPayments.environment, config.switchPayments.publicKey);
-            switchJs.charge({
-                popUp: false,
-                amount: payload.paymentDetails.amount,
-                currency: payload.paymentDetails.currency,
-                metadata: {orderId: order.id},
-                eventsUrl: `${eventsAPIBaseUrl}/orders/${order.id}/spwh`,
-                instrument: Object.assign(payload.paymentDetails.instrument, {
-                    type: payload.paymentDetails.chargeType,
-                    country: 'PT'
-                })
-            }).then(function successFn() {
+        if (payload.paymentDetails.provider === 'stripe') {
+            //console.log("OrderId: "+ order.id);
+            payload.token.orderId = order.id;
+            context.api.orders.createStripeOrder(payload.token
+             ).then(function successFn() {
                 dispatchOrderCreatedSuccessfully();
             }, function errorFn() {
                 dispatchOrderCreatedSuccessfully();
             });
         }
 
-        // 2) Payment method NOT provided by switch
+        // 2) Payment method NOT provided by stripe
         else {
             dispatchOrderCreatedSuccessfully();
         }

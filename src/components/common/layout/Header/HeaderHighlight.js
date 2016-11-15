@@ -41,12 +41,12 @@ class HeaderHighlight extends React.Component {
                 </div>
                 <div className="header-highlight__shipping-text">
                     <Text size="small" weight="bold">
-                        <FormattedMessage message={intlStore.getMessage(intlData, 'freeShipping')}
+                        <FormattedMessage message={intlStore.getMessage(intlData, 'betaMode')}
                                           locales={intlStore.getCurrentLocale()} />
                         &nbsp;
-                        <FormattedNumber value="19.90"
+                        <FormattedNumber value="0.00"
                                          style="currency"
-                                         currency="EUR" />
+                                         currency="JPY" />
                     </Text>
                 </div>
             </div>

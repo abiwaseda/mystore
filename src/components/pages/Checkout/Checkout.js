@@ -335,7 +335,7 @@ class Checkout extends React.Component {
 
     onToken = (tokenn) => {
     if (tokenn != null){
-      console.log("token : " + tokenn.id); // for debug, remove in prod
+        //console.log("token : " + tokenn.id); // for debug, remove in prod
         let payload = {
             token: tokenn,
             checkoutId: this.state.checkout.id,
@@ -344,7 +344,7 @@ class Checkout extends React.Component {
                 amount: this.state.checkout.total,
                 currency: this.state.checkout.currency,
                 chargeType: this.state.checkout.paymentMethod,
-                provider: "Stripe",
+                provider: "stripe",
                 instrument: this.state.paymentInstrument.params || {}
             }
         };
@@ -479,6 +479,7 @@ class Checkout extends React.Component {
                                                          loading={this.state.checkoutLoading}
                                                          error={this.state.checkoutError} />
                             </CheckoutSection>
+                            {/* //Shipping info related tags
                             <CheckoutSection className="checkout__section" number="2" title={intlStore.getMessage(intlData, 'shippingInformation')}>
                                 <CheckoutShippingInformation user={this.state.user}
                                                              address={this.state.checkout.shippingAddress}
@@ -490,6 +491,7 @@ class Checkout extends React.Component {
                                                              onShippingOptionChange={this.handleShippingOptionChange}
                                                              loading={this.state.checkoutLoading} />
                             </CheckoutSection>
+                            {console.log("checkout Option: "+ this.state.paymentOptions[0].id)}
                             <CheckoutSection className="checkout__section" number="3" title={intlStore.getMessage(intlData, 'billingInformation')}>
                                 <CheckoutBillingInformation user={this.state.user}
                                                             address={this.state.checkout.billingAddress}
@@ -504,12 +506,14 @@ class Checkout extends React.Component {
                                                             onPaymentInstrumentChange={this.handlePaymentInstrumentChange}
                                                             loading={this.state.checkoutLoading}  />
                             </CheckoutSection>
+                            */}
+
                         </div>
                         <div className="checkout__right-column">
                             <CheckoutSection className="checkout__section" number="✓" title={intlStore.getMessage(intlData, 'orderSummary')}>
                                 <CheckoutSummary checkout={this.state.checkout}
                                                  useShippingAddressForBilling={this.state.useShippingAddressForBilling}
-                                                 readyForCheckout={this.state.checkout.ready && this.state.paymentInstrument.ready}
+                                                 readyForCheckout={this.state.checkout.ready}
                                                  onStripeClick={this.onToken}
                                                  onCheckoutClick={this.handleCheckoutClick}/>
                             </CheckoutSection>

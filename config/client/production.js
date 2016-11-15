@@ -10,7 +10,7 @@ export default {
     },
     api: {
         atlas: {
-            baseUrl: 'https://nicistore.com/api/v1'
+            baseUrl: 'http://localhost:8000/v1'
         }
     },
     googleAnalytics: {
@@ -32,7 +32,7 @@ export default {
         signupFormPostURL: process.env.MAILCHIMP_SIGNUP_FORM_POST_URL
     },
     switchPayments: {
-        enabled: true,
+        enabled: false,
         environment: 'https://api.switchpayments.com/v2/',
         publicKey: process.env.SWITCH_PUBLIC_KEY
     }

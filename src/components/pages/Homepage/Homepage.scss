@@ -7,7 +7,7 @@
 
 .homepage{
     max-width: 950px;
-    margin: 30px;
+//    margin: 30px;
 }
 
 .homepage__cta {
@@ -36,8 +36,12 @@
     justify-content: center;
 }
 
+.homepage__featured-padding {
+    padding-left: 20px;
+}
+
 .homepage__banners {
-    padding-left: 25px;
+//    padding-left: 25px;
     align-self: center;
     width: 100%;
     @include breakpoint(handhelds) {

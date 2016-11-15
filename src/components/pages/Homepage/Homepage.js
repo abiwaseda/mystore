@@ -160,10 +160,14 @@ class Homepage extends React.Component {
                 <div className="homepage__featured">
                     <div className="homepage__featured-block">
                         <HomepageFeaturedCollection feature={featuredCollections[0]} />
+                        <div className="homepage__featured-padding">
+                        </div>
                         <HomepageFeaturedCollection feature={featuredCollections[1]} />
                     </div>
                     <div className="homepage__featured-block">
                         <HomepageFeaturedCollection feature={featuredCollections[2]} />
+                        <div className="homepage__featured-padding">
+                        </div>
                         <HomepageFeaturedCollection feature={featuredCollections[3]} />
                     </div>
                 </div>
