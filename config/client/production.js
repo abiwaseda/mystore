@@ -2,15 +2,15 @@
 // Do not require this directly. Use ./src/config instead.
 export default {
     app: {
-        title: 'NICI Store',
+        title: 'YAMACITY',
         locale: {
             available: ['en', 'pt'],
-            default: 'pt'
+            default: 'en'
         }
     },
     api: {
         atlas: {
-            baseUrl: 'http://localhost:8000/v1'
+            baseUrl: 'http://yamacity.com/api/v1'
         }
     },
     googleAnalytics: {

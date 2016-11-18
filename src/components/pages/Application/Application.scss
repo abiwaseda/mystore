@@ -49,6 +49,10 @@
     max-width: $layout-max-width;
     padding: 20px 32px 20px 32px;
 
+    @media only screen and (max-width: 400px) {
+        padding: 20px 15px 20px 15px;
+    }
+
     @media only screen and (min-width: $layout-max-width) {
         padding-left: 0;
         padding-right: 0;
@@ -72,16 +76,32 @@
     &--left-drawer-open {
         visibility: visible;
         transform: translateX($drawer-width);
+        -ms-transform:translateX($drawer-width);
+        -webkit-transform:translateX($drawer-width);
+        -moz-transform:translateX($drawer-width);
+        -o-transform:translateX($drawer-width);
         @media only screen and (max-width: 400px) {
             transform: translateX(240px);
+            -ms-transform:translateX(240px);
+            -webkit-transform:translateX(240px);
+            -moz-transform:translateX(240px);
+            -o-transform:translateX(240px);
         }
     }
 
     &--right-drawer-open {
         visibility: visible;
         transform: translateX(-$drawer-width);
+        -ms-transform:translateX(-$drawer-width);
+        -webkit-transform:translateX(-$drawer-width);
+        -moz-transform:translateX(-$drawer-width);
+        -o-transform:translateX(-$drawer-width);
         @media only screen and (max-width: 400px) {
             transform: translateX(-240px);
+            -ms-transform:translateX(-240px);
+            -webkit-transform:translateX(-240px);
+            -moz-transform:translateX(-240px);
+            -o-transform:translateX(-240px);
         }
     }
 }
