@@ -1,0 +1,24 @@
+@import '../../../styles/mixins/breakpoints.scss';
+@import '../../../styles/variables.scss';
+
+.product-table {
+    margin-top:10px;
+    overflow-x:auto;
+}
+
+.product-table table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+.product-table th, .product-table td {
+    color: #5c433d;
+    border: none;
+    text-align: left;
+    padding: 8px;
+    vertical-align: middle;
+}
+
+.product-table tr:nth-child(even){background-color: #f2f2f2}

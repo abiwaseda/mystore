@@ -93,7 +93,8 @@ class Checkout extends React.Component {
         paymentInstrument: {ready: false},
 
         showOrderCreatedModal: false,
-        showOrderErrorModal: false
+        showOrderErrorModal: false,
+        key: config.stripePayments.publicKey
     };
 
     //*** Component Lifecycle ***//
@@ -362,7 +363,6 @@ class Checkout extends React.Component {
         //
         // Helper methods & variables
         //
-
         let intlStore = this.context.getStore(IntlStore);
         let routeParams = {locale: this.context.getStore(IntlStore).getCurrentLocale()}; // Base route params
 
@@ -514,6 +514,7 @@ class Checkout extends React.Component {
                                 <CheckoutSummary checkout={this.state.checkout}
                                                  useShippingAddressForBilling={this.state.useShippingAddressForBilling}
                                                  readyForCheckout={this.state.checkout.ready}
+                                                 pkey={this.state.key}
                                                  onStripeClick={this.onToken}
                                                  onCheckoutClick={this.handleCheckoutClick}/>
                             </CheckoutSection>

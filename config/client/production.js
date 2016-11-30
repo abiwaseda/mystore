@@ -35,5 +35,8 @@ export default {
         enabled: false,
         environment: 'https://api.switchpayments.com/v2/',
         publicKey: process.env.SWITCH_PUBLIC_KEY
+    },
+    stripePayments: {
+        publicKey: process.env.STRIPE_TEST_PUBLIC_KEY
     }
 };

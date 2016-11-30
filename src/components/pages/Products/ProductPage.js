@@ -33,6 +33,7 @@ import NotFound from '../../pages/NotFound/NotFound';
 import ProductSuggestions from '../../common/products/ProductSuggestions';
 import QuantitySelector from '../../common/forms/QuantitySelector';
 import Text from '../../common/typography/Text';
+import ProductTravelDetail from '../../common/products/ProductTravelDetail';
 
 // Translation data for this component
 import intlData from './ProductPage.intl';
@@ -291,37 +292,18 @@ class ProductPage extends React.Component {
                                         <div style={{display: 'none'}} itemProp="priceCurrency">
                                             {this.state.product.pricing.currency}
                                         </div>
+                                        <div>
+                                            <Text size="medium" weight="bold">
+                                                <FormattedNumber
+                                                    value={this.state.product.pricing.retail}
+                                                    style="currency"
+                                                    currency={this.state.product.pricing.currency} />
+                                            </Text>
+                                        </div>
                                     </div>
                                     :
                                     null
                                 }
-                                <div className="product-table">
-                                    <table>
-                                        <tr>
-                                            <th>Price</th>
-                                            <td>
-                                                <Text size="medium" weight="bold">
-                                                    <FormattedNumber
-                                                        value={this.state.product.pricing.retail}
-                                                        style="currency"
-                                                        currency={this.state.product.pricing.currency} />
-                                                </Text>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>Location</th>
-                                            <td>{this.state.product.others.location}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Duration</th>
-                                            <td>{this.state.product.others.duration}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Plan Includes</th>
-                                            <td>{this.state.product.others.includes}</td>
-                                        </tr>
-                                    </table>
-                                </div>
 
                                 <div className="product-page__sku">
                                     <Text size="small">
@@ -351,6 +333,13 @@ class ProductPage extends React.Component {
                                         }
                                     </div>
                                 </div>
+
+                                {this.state.product.others ?
+                                    <ProductTravelDetail
+                                    product={this.state.product}/>
+                                :
+                                null
+                                }
 
 
 
