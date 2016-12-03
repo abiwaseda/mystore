@@ -22,6 +22,7 @@ import createCheckout from '../../../actions/Checkout/createCheckout';
 import createOrder from '../../../actions/Orders/createOrder';
 import createStripeOrder from '../../../actions/Orders/createStripeOrder';
 import updateCheckout from '../../../actions/Checkout/updateCheckout';
+import sendOrderEmail from '../../../actions/Orders/sendOrderEmail';
 
 // Required components
 import Button from '../../common/buttons/Button';
@@ -330,6 +331,16 @@ class Checkout extends React.Component {
         this.context.executeAction(createCart);
     };
 
+    sendOrderCreateEmail = (id) => {
+        let emailInfo = {
+            email: "adhikari.abi@gmail.com",
+            subject: "New Order Received : " + id,
+            template: "order.created"
+
+            }
+        this.context.executeAction(sendOrderEmail, {orderId: id, data: emailInfo});
+    };
+
     //
     // Stripe
     //
@@ -347,8 +358,10 @@ class Checkout extends React.Component {
                 chargeType: this.state.checkout.paymentMethod,
                 provider: "stripe",
                 instrument: this.state.paymentInstrument.params || {}
-            }
+            },
+            mailFun : this.sendOrderCreateEmail
         };
+
         this.context.executeAction(createStripeOrder, payload);
 
       } else {

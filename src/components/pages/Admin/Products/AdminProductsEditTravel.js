@@ -54,7 +54,6 @@ class AdminProductsEditTravel extends React.Component {
     }
 
     handleDeleteButtonClick = (idx) => {
-       //let a = evt.target.value;
        let schedule = this.state.schedule;
        schedule.splice(idx,1);
        this.setState({schedule: schedule})
@@ -82,10 +81,6 @@ class AdminProductsEditTravel extends React.Component {
             return callback(key, object[key]);
           });
         }
-
-//        if (!this.state.schedule) {
-//            this.state.schedule = [{day:"1", event:"a"}];
-//            };
 
         return(
         <div className="admin-products-edit__form-item">

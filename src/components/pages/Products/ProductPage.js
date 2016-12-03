@@ -373,7 +373,7 @@ class ProductPage extends React.Component {
                             </div>
                         </div>
 
-                       {this.state.product.others[locale].schedule && this.state.product.others[locale].schedule.lenght !== 0?
+                       {this.state.product.others[locale].schedule && this.state.product.others[locale].schedule.length !== 0?
                             <ProductTravelDetailSchedule
                             others={this.state.product.others[locale]}/>
                         :
