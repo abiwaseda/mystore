@@ -2,11 +2,13 @@ export default {
     en: {
         location: 'Location',
         duration: 'Duration',
-        includes: 'Plan Includes'
+        provided: 'Plan Includes',
+        scheduleLabel: 'Schedule',
     },
     pt: {
         location: 'Location',
         duration: 'Duration',
-        includes: 'Plan Includes'
+        provided: 'Plan Includes',
+        scheduleLabel: 'Schedule',
     }
 };

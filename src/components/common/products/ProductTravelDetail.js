@@ -10,6 +10,7 @@ import IntlStore from '../../../stores/Application/IntlStore';
 // Required components
 import Breakpoint from '../../core/Breakpoint';
 import Text from '../../common/typography/Text';
+import Heading from '../../common/typography/Heading';
 
 // Translation data for this component
 import intlData from './ProductTravelDetail.intl';
@@ -47,26 +48,26 @@ class ProductTravelDetail extends React.Component {
         return (
             <div className="product-table">
                 <table>
-                {this.props.product.others.location ?
+                {this.props.others.location ?
                     <tr>
                         <th>{intlStore.getMessage(intlData, 'location')}</th>
-                        <td>{this.props.product.others.location}</td>
+                        <td>{this.props.others.location}</td>
                     </tr>
                  :
                  null
                  }
-                {this.props.product.others.duration ?
+                {this.props.others.duration ?
                     <tr>
                         <th>{intlStore.getMessage(intlData, 'duration')}</th>
-                        <td>{this.props.product.others.duration}</td>
+                        <td>{this.props.others.duration}</td>
                     </tr>
                  :
                  null
                  }
-                {this.props.product.others.includes ?
+                {this.props.others.provided ?
                     <tr>
-                        <th>{intlStore.getMessage(intlData, 'includes')}</th>
-                        <td>{this.props.product.others.includes}</td>
+                        <th>{intlStore.getMessage(intlData, 'provided')}</th>
+                        <td>{this.props.others.provided}</td>
                     </tr>
                  :
                  null

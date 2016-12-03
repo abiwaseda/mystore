@@ -16,6 +16,11 @@
     padding: 20px 30px 20px 30px;
     border-bottom: 3px solid $color-primary;
     background-color: $color-secondary;
+    overflow-wrap: break-word;
+}
+
+.admin-header ul {
+    text-align: left;
 }
 
 .admin-title {

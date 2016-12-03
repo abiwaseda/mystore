@@ -21,7 +21,13 @@ export default {
         stock: 'Stock',
         title: 'Edit Product',
         type: 'Type',
-        vat: '% VAT (Included)'
+        vat: '% VAT (Included)',
+        others: 'Details',
+        location: 'Location',
+        duration: 'Duration',
+        provided: 'Plan',
+        schedule: 'Schedule',
+        day: 'Day'
     },
     pt: {
         back: 'Voltar',
@@ -45,6 +51,12 @@ export default {
         stock: 'Stock',
         title: 'Editar Produto',
         type: 'Tipo',
-        vat: '% IVA (Incluído)'
+        vat: '% IVA (Incluído)',
+        others: 'Details',
+        location: 'Location',
+        duration: 'Duration',
+        provided: 'Plan',
+        schedule: 'Schedule',
+        day: 'Day'
     }
 };

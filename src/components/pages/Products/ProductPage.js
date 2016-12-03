@@ -34,6 +34,7 @@ import ProductSuggestions from '../../common/products/ProductSuggestions';
 import QuantitySelector from '../../common/forms/QuantitySelector';
 import Text from '../../common/typography/Text';
 import ProductTravelDetail from '../../common/products/ProductTravelDetail';
+import ProductTravelDetailSchedule from '../../common/products/ProductTravelDetailSchedule';
 
 // Translation data for this component
 import intlData from './ProductPage.intl';
@@ -242,6 +243,8 @@ class ProductPage extends React.Component {
           });
         }
 
+        let locale = intlStore.getCurrentLocale();
+
         //
         // Return
         //
@@ -336,7 +339,7 @@ class ProductPage extends React.Component {
 
                                 {this.state.product.others ?
                                     <ProductTravelDetail
-                                    product={this.state.product}/>
+                                    others={this.state.product.others[locale]}/>
                                 :
                                 null
                                 }
@@ -370,7 +373,14 @@ class ProductPage extends React.Component {
                             </div>
                         </div>
 
-                        {this.state.product.others.schedule && Object.keys(this.state.product.others.schedule).length !== 0 ?
+                       {this.state.product.others[locale].schedule && this.state.product.others[locale].schedule.lenght !== 0?
+                            <ProductTravelDetailSchedule
+                            others={this.state.product.others[locale]}/>
+                        :
+                        null
+                        }
+{/**
+                        {this.state.product.others[locale].schedule && this.state.product.others[locale].schedule.length !== 0 ?
                         <div>
                             <div className="product-page__description product-page__description-label">
                                 <Heading size="medium">
@@ -385,11 +395,11 @@ class ProductPage extends React.Component {
                                         <th>Day</th>
                                         <th>Schedule</th>
                                     </tr>
-                                    {mapobject(this.state.product.others.schedule, (key, value) => {
+                                    {this.state.product.others[locale].schedule.map((value) => {
                                         return (
                                             <tr>
-                                                <td>{key}</td>
-                                                <td>{value}</td>
+                                                <td>{value["day"]}</td>
+                                                <td>{value["event"]}</td>
                                             </tr>
                                         );
                                     })}
@@ -399,7 +409,7 @@ class ProductPage extends React.Component {
                         :
                         null
                         }
-
+**/}
                         {!this.state.suggestionsLoading && this.state.suggestions.length === 0 ?
                             <div className="product-page__suggestions product-page__suggestions--no-border"></div>
                             :
