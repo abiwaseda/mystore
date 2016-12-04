@@ -3,7 +3,7 @@ export default {
         save: 'Save',
         shippingMethodLabel: 'Select Shipping Method'
     },
-    pt: {
+    jp: {
         save: 'Guardar',
         shippingMethodLabel: 'Selecione Método de Envio'
     }

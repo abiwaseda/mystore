@@ -13,7 +13,7 @@ export default {
         title: 'Contents',
         typeHeading: 'Type'
     },
-    pt: {
+    jp: {
         article: 'Artigo',
         banner: 'Banner',
         enabledHeading: 'Activado',

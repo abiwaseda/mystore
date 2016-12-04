@@ -7,7 +7,7 @@ export default {
         submit: 'Submit',
         type: 'Content Type'
     },
-    pt: {
+    jp: {
         catalog: 'Catálogo',
         cancel: 'Cancelar',
         fieldRequired: 'Este campo é obrigatório',

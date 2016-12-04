@@ -7,7 +7,7 @@ export default {
         products: 'Products',
         customers: 'Customers'
     },
-    pt: {
+    jp: {
         collections: 'Colecções',
         contents: 'Conteúdos',
         dashboard: 'Dashboard',

@@ -72,7 +72,7 @@ class AdminProductsEdit extends React.Component {
             nextProps._error.validation.keys.forEach(function (field) {
                 if (field === 'description') {
                     fieldErrors['description.en'] = nextProps._error.validation.details[field];
-                    fieldErrors['description.pt'] = nextProps._error.validation.details[field];
+                    fieldErrors['description.jp'] = nextProps._error.validation.details[field];
                 } else {
                     fieldErrors[field] = nextProps._error.validation.details[field];
                 }
@@ -186,8 +186,8 @@ class AdminProductsEdit extends React.Component {
         if (!this.state.product.name.en) {
             fieldErrors.nameEN = intlStore.getMessage(intlData, 'fieldRequired');
         }
-        if (!this.state.product.name.pt) {
-            fieldErrors.namePT = intlStore.getMessage(intlData, 'fieldRequired');
+        if (!this.state.product.name.jp) {
+            fieldErrors.nameJP = intlStore.getMessage(intlData, 'fieldRequired');
         }
         this.setState({fieldErrors: fieldErrors});
         // Client-side validation checked, trigger update request
@@ -333,10 +333,10 @@ class AdminProductsEdit extends React.Component {
                                             error={fieldError('nameEN')} />
                             </div>
                             <div className="admin-products-edit__form-item">
-                                <InputField label={intlStore.getMessage(intlData, 'name') + ' (PT)'}
-                                            onChange={this.handleNameChange.bind(null, 'pt')}
-                                            value={this.state.product.name.pt}
-                                            error={fieldError('namePT')} />
+                                <InputField label={intlStore.getMessage(intlData, 'name') + ' (JP)'}
+                                            onChange={this.handleNameChange.bind(null, 'jp')}
+                                            value={this.state.product.name.jp}
+                                            error={fieldError('nameJP')} />
                             </div>
                         </div>
                         <div className="admin-products-edit__right-column">
@@ -401,11 +401,11 @@ class AdminProductsEdit extends React.Component {
                                       error={fieldError('description.en')} />
                         </div>
                         <div className="admin-products-edit__form-item">
-                            <Textarea label={intlStore.getMessage(intlData, 'description') + ' (PT)'}
+                            <Textarea label={intlStore.getMessage(intlData, 'description') + ' (JP)'}
                                       rows="5"
-                                      onChange={this.handleIntlFieldChange.bind(null, 'description', 'pt')}
-                                      value={this.state.product.description ? this.state.product.description.pt : null}
-                                      error={fieldError('description.pt')} />
+                                      onChange={this.handleIntlFieldChange.bind(null, 'description', 'jp')}
+                                      value={this.state.product.description ? this.state.product.description.jp : null}
+                                      error={fieldError('description.jp')} />
                         </div>
                         <div className="admin-products-edit__form-item">
                             <InlineItems label={<FormattedMessage
@@ -433,13 +433,24 @@ class AdminProductsEdit extends React.Component {
                             </InlineItems>
                         </div>
                         {this.state.product.others ?
+                        <div className="admin-products-edit__form-item">
                             <AdminProductsEditTravel
                                 others={this.state.product.others.en}
                                 schedule={this.state.product.others.en.schedule}
                                 local="en"
+                                nameTag=" (EN)"
                                 onChange={this.handleOtherDetailsChange}
                                 onChangeSchedule={this.handleScheduleChange}
                                 fieldError={fieldError} />
+                            <AdminProductsEditTravel
+                                others={this.state.product.others.jp}
+                                schedule={this.state.product.others.jp.schedule}
+                                local="jp"
+                                nameTag=" (JP)"
+                                onChange={this.handleOtherDetailsChange}
+                                onChangeSchedule={this.handleScheduleChange}
+                                fieldError={fieldError} />
+                        </div>
                             :
                             null
                         }

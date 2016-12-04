@@ -7,7 +7,7 @@ export default {
         sku: 'SKU',
         type: 'Type'
     },
-    pt: {
+    jp: {
         add: 'Adicionar',
         cancel: 'Cancelar',
         fieldRequired: 'Este campo é obrigatório',

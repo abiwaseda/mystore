@@ -9,7 +9,7 @@ export default {
         ready: 'Ready',
         shipped: 'Shipped'
     },
-    pt: {
+    jp: {
         created: 'Criada',
         pendingPayment: 'Pagamento Pendente',
         paymentError: 'Erro no Pagamento',

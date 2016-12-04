@@ -9,7 +9,7 @@ export default {
         title: 'Reset Password',
         unknownError: 'Error. Please contact support'
     },
-    pt: {
+    jp: {
         email: 'E-Mail',
         fieldRequired: 'Este campo é obrigatório',
         submit: 'Submeter',

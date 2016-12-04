@@ -86,7 +86,7 @@ class AdminProductsEditTravel extends React.Component {
         <div className="admin-products-edit__form-item">
             <div className="admin-products-edit__form-item">
                 <InlineItems label={<FormattedMessage
-                    message={intlStore.getMessage(intlData, 'others')}
+                    message={intlStore.getMessage(intlData, 'others')+this.props.nameTag}
                     locales={intlStore.getCurrentLocale()} />}>
                     <InputField label={intlStore.getMessage(intlData, 'location')}
                                 labelSize="small" labelWeight="normal"
@@ -109,7 +109,7 @@ class AdminProductsEditTravel extends React.Component {
             </div>
             <div className="admin-products-edit__form-item admin-products-edit__form-item-schedule">
                 <FormLabel for={this.generateId}>
-                    {intlStore.getMessage(intlData, 'schedule')}
+                    {intlStore.getMessage(intlData, 'schedule')+this.props.nameTag}
                 </FormLabel>
                 <InlineItems>
                     <FormLabel for={this.generateId} size="small" weight="bold">

@@ -14,7 +14,7 @@ export default {
         type: 'Type',
         unsupportedType: 'Unsupported content type'
     },
-    pt: {
+    jp: {
         back: 'Voltar',
         categories: 'Categorias',
         collections: 'Colecções',

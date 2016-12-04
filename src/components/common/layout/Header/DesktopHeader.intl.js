@@ -6,7 +6,7 @@ export default {
         myAccount: 'My Account',
         register: 'Register'
     },
-    pt: {
+    jp: {
         hi: 'Olá',
         login: 'Login',
         logout: 'Logout',

@@ -8,7 +8,7 @@ export default {
         name: 'Name',
         type: 'Type'
     },
-    pt: {
+    jp: {
         add: 'Adicionar',
         article: 'Artigo',
         banner: 'Banner',

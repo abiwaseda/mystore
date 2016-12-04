@@ -29,7 +29,7 @@ export default {
         schedule: 'Schedule',
         day: 'Day'
     },
-    pt: {
+    jp: {
         back: 'Voltar',
         categories: 'Categorias',
         collections: 'Colecções',

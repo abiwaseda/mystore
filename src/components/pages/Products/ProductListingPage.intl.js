@@ -5,7 +5,7 @@ export default {
         pagination: 'Page {currentPage} of {totalPages}',
         productsList: 'Products'
     },
-    pt: {
+    jp: {
         homepage: 'Página Principal',
         pageTitle: 'Produtos',
         pagination: 'Página {currentPage} de {totalPages}',

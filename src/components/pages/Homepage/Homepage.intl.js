@@ -2,7 +2,7 @@ export default {
     en: {
         productsList: 'Featured Products'
     },
-    pt: {
+    jp: {
         productsList: 'Destaques'
     }
 };

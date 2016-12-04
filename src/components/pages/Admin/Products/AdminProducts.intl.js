@@ -14,7 +14,7 @@ export default {
         upload: 'Upload',
         uploadModalTitle: 'Products Upload'
     },
-    pt: {
+    jp: {
         enabledHeading: 'Activo',
         homepage: 'Página Principal',
         imagesHeading: 'Imagens',

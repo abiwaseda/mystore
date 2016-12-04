@@ -14,7 +14,7 @@ export default {
         title: 'Collections',
         translationsHeading: 'Translations'
     },
-    pt: {
+    jp: {
         category: 'Categoria',
         collection: 'Colecção',
         enabledHeading: 'Activada',

@@ -8,7 +8,7 @@ export default {
         statusHeading: 'Status',
         title: 'Orders'
     },
-    pt: {
+    jp: {
         dateHeading: 'Data',
         emailHeading: 'Email',
         idHeading: 'ID',

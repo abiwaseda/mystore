@@ -4,7 +4,7 @@ export default {
         mainNavigationSettingsTitle: 'Main Navigation Order',
         title: 'Dashboard'
     },
-    pt: {
+    jp: {
         homepageSettingsTitle: 'Configurações da Página Principal',
         mainNavigationSettingsTitle: 'Ordernar Menu Principal',
         title: 'Dashboard'

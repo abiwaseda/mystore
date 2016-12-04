@@ -6,7 +6,7 @@ export default {
         subTotal: 'Sub-total',
         total: 'Total'
     },
-    pt: {
+    jp: {
         name: 'Nome',
         quantityAndPrice: 'Qtd / Preço',
         shipping: 'Envio',

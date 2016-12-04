@@ -9,7 +9,7 @@ export default {
         register: 'create an account',
         submit: 'Submit'
     },
-    pt: {
+    jp: {
         comments: '{total, plural, =1 {# Comentário} other {# Comentários}}',
         fieldRequired: 'Este campo é obrigatório',
         leaveComment: 'Deixe o seu comentário',

@@ -4,7 +4,7 @@ export default {
         imageLabel: 'Banner Image URL',
         link: 'Link'
     },
-    pt: {
+    jp: {
         delete: 'Apagar',
         imageLabel: 'Banner Image URL',
         link: 'Link'

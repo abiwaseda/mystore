@@ -10,7 +10,7 @@ export default {
         status: 'Status',
         submit: 'Submit'
     },
-    pt: {
+    jp: {
         cancel: 'Cancelar',
         cancelOrder: 'Cancelada',
         description: 'Descrição',

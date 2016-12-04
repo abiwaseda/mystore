@@ -6,7 +6,7 @@ export default {
         status: 'Status',
         title: 'Customers'
     },
-    pt: {
+    jp: {
         createdAtHeading: 'Data Registo',
         emailHeading: 'Email',
         nameHeading: 'Nome',

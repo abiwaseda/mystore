@@ -8,7 +8,7 @@ export default {
         title: '{appTitle} Content',
         viewAllArticles: 'View all articles'
     },
-    pt: {
+    jp: {
         headline: 'Na nossa secção de conteúdos poderá encontrar artigos relevantes e detalhados sobre bebés dos 0 aos 18 meses. Tal como os nossos brinquedos, procuramos ajudá-lo e acompanhá-lo nas diversas etapas do desenvolvimento e a perceber melhor os desafios e alegrias que o esperam :) Se tiver dúvidas ou questões, não hesite em contactar-nos!',
         newsletterCta: 'Quer ser o primeiro a receber novidades?',
         noResults: 'A sua selecção não possui resultados',

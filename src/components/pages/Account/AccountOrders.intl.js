@@ -8,7 +8,7 @@ export default {
         title: 'Last Order',
         viewDetails: 'View Details'
     },
-    pt: {
+    jp: {
         dateHeading: 'Data',
         history: 'Histórico',
         idHeading: 'ID',

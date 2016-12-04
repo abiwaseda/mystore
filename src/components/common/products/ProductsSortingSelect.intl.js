@@ -10,7 +10,7 @@ export default {
         sortPriceReverse: 'Price: High to Low',
         sortRecent: 'Date: New to Old'
     },
-    pt: {
+    jp: {
         sortAlphabetically: 'Alfabeticamente: A-Z',
         sortAlphabeticallyReverse: 'Alfabeticamente: Z-A',
         sortBestSelling: 'Mais Vendidos',

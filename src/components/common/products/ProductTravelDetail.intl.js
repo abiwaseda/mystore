@@ -5,7 +5,7 @@ export default {
         provided: 'Plan Includes',
         scheduleLabel: 'Schedule',
     },
-    pt: {
+    jp: {
         location: 'Location',
         duration: 'Duration',
         provided: 'Plan Includes',

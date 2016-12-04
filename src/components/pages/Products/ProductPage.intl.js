@@ -7,7 +7,7 @@ export default {
         outOfStock: 'Out of Stock',
         productsList: 'Products'
     },
-    pt: {
+    jp: {
         addToCart: 'Comprar',
         crossSell: 'Outros produtos desta colecção',
         descriptionLabel: 'Descrição',

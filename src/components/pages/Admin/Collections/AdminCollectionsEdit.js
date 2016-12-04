@@ -146,8 +146,8 @@ class AdminCollectionsEdit extends React.Component {
         if (!this.state.collection.name.en) {
             fieldErrors.nameEN = intlStore.getMessage(intlData, 'fieldRequired');
         }
-        if (!this.state.collection.name.pt) {
-            fieldErrors.namePT = intlStore.getMessage(intlData, 'fieldRequired');
+        if (!this.state.collection.name.jp) {
+            fieldErrors.nameJP = intlStore.getMessage(intlData, 'fieldRequired');
         }
         this.setState({fieldErrors: fieldErrors});
 
@@ -281,10 +281,10 @@ class AdminCollectionsEdit extends React.Component {
                                             error={fieldError('nameEN')} />
                             </div>
                             <div className="admin-collection-edit__form-item">
-                                <InputField label={intlStore.getMessage(intlData, 'name') + ' (PT)'}
-                                            onChange={this.handleNameChange.bind(null, 'pt')}
-                                            value={this.state.collection.name.pt}
-                                            error={fieldError('namePT')} />
+                                <InputField label={intlStore.getMessage(intlData, 'name') + ' (JP)'}
+                                            onChange={this.handleNameChange.bind(null, 'jp')}
+                                            value={this.state.collection.name.jp}
+                                            error={fieldError('nameJP')} />
                             </div>
                             <div className="admin-collection-edit__form-item">
                                     <Textarea label={intlStore.getMessage(intlData, 'description') + ' (EN)'}
@@ -294,11 +294,11 @@ class AdminCollectionsEdit extends React.Component {
                                               error={fieldError('description.en')} />
                             </div>
                             <div className="admin-collection-edit__form-item">
-                                    <Textarea label={intlStore.getMessage(intlData, 'description') + ' (PT)'}
+                                    <Textarea label={intlStore.getMessage(intlData, 'description') + ' (JP)'}
                                               rows="5"
-                                              onChange={this.handleIntlFieldChange.bind(null, 'description', 'pt')}
-                                              value={this.state.collection.description ? this.state.collection.description.pt : null}
-                                              error={fieldError('description.pt')} />
+                                              onChange={this.handleIntlFieldChange.bind(null, 'description', 'jp')}
+                                              value={this.state.collection.description ? this.state.collection.description.jp : null}
+                                              error={fieldError('description.jp')} />
                             </div>
                             <div className="admin-collection-edit__form-item">
                                 <ImageLibraryManager images={this.state.collection.images}

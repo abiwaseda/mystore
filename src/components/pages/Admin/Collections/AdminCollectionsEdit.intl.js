@@ -17,7 +17,7 @@ export default {
         title: 'Edit Collection',
         type: 'Type'
     },
-    pt: {
+    jp: {
         back: 'Voltar',
         category: 'Categoria',
         collection: 'Colecção',

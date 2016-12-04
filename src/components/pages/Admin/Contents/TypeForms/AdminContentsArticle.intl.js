@@ -4,7 +4,7 @@ export default {
         preview: 'Preview',
         summary: 'Summary'
     },
-    pt: {
+    jp: {
         edit: 'Editar',
         preview: 'Pré-Visualizar',
         summary: 'Resumo'

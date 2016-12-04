@@ -8,7 +8,7 @@ export default {
         shippingMethod: 'Shipping Method',
         whatsMissing: 'What\'s missing?'
     },
-    pt: {
+    jp: {
         billingAddress: 'Morada de Faturação',
         checkout: 'Finalizar',
         customerDetails: 'Detalhes do Cliente',

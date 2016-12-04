@@ -10,7 +10,7 @@ export default {
         submit: 'Send',
         template: 'Template'
     },
-    pt: {
+    jp: {
         cancel: 'Cancelar',
         emailAddress: 'Endereço de Email',
         fieldRequired: 'Este campo é obrigatório',

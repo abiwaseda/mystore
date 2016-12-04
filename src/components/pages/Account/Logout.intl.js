@@ -2,7 +2,7 @@ export default {
     en: {
         header: 'Logging out...'
     },
-    pt: {
+    jp: {
         header: 'Terminando a sessão...'
     }
 };

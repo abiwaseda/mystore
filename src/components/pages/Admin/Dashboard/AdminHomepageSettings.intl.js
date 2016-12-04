@@ -4,7 +4,7 @@ export default {
         orderBanners: 'Organize Banners',
         update: 'Update'
     },
-    pt: {
+    jp: {
         homepageFeaturedCollections: 'Categorias e Colecções Destacadas',
         orderBanners: 'Organizar Banners',
         update: 'Actualizar'

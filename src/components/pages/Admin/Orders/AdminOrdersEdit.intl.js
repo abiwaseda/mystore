@@ -7,7 +7,7 @@ export default {
         updateModalTitle: 'Update Status',
         updateStatus: 'Update'
     },
-    pt: {
+    jp: {
         back: 'Voltar',
         sendEmail: 'Enviar Email',
         sendEmailModalTitle: 'Enviar Email',

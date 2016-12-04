@@ -13,7 +13,7 @@ export default {
         submit: 'Submit',
         vatin: 'VAT Identification Number'
     },
-    pt: {
+    jp: {
         address: 'Morada',
         cancel: 'Cancelar',
         city: 'Cidade',

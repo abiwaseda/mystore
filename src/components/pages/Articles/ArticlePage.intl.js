@@ -7,7 +7,7 @@ export default {
         suggestedProducts: 'Suggested Products',
         viewAllArticles: 'View all articles'
     },
-    pt: {
+    jp: {
         articleNotFound: 'Artigo Não Encontrado',
         newsletterCta: 'Gostou do artigo?',
         invalidArticle: 'Artigo Inválido',

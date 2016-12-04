@@ -337,9 +337,9 @@ class ProductPage extends React.Component {
                                     </div>
                                 </div>
 
-                                {this.state.product.others ?
+                                {this.state.product.others[intlStore.getCurrentLocale()] ?
                                     <ProductTravelDetail
-                                    others={this.state.product.others[locale]}/>
+                                    others={this.state.product.others[intlStore.getCurrentLocale()]}/>
                                 :
                                 null
                                 }
@@ -372,44 +372,18 @@ class ProductPage extends React.Component {
                                 </Text>
                             </div>
                         </div>
-
-                       {this.state.product.others[locale].schedule && this.state.product.others[locale].schedule.length !== 0?
-                            <ProductTravelDetailSchedule
-                            others={this.state.product.others[locale]}/>
-                        :
-                        null
-                        }
-{/**
-                        {this.state.product.others[locale].schedule && this.state.product.others[locale].schedule.length !== 0 ?
+                        {this.state.product.others[locale] ?
                         <div>
-                            <div className="product-page__description product-page__description-label">
-                                <Heading size="medium">
-                                    <FormattedMessage
-                                        message={intlStore.getMessage(intlData, 'scheduleLabel')}
-                                        locales={intlStore.getCurrentLocale()} />
-                                </Heading>
-                            </div>
-                            <div className="product-table">
-                                <table>
-                                    <tr>
-                                        <th>Day</th>
-                                        <th>Schedule</th>
-                                    </tr>
-                                    {this.state.product.others[locale].schedule.map((value) => {
-                                        return (
-                                            <tr>
-                                                <td>{value["day"]}</td>
-                                                <td>{value["event"]}</td>
-                                            </tr>
-                                        );
-                                    })}
-                                </table>
-                             </div>
-                         </div>
-                        :
-                        null
+                           {this.state.product.others[locale].schedule && this.state.product.others[locale].schedule.length !== 0 ?
+                                <ProductTravelDetailSchedule
+                                others={this.state.product.others[locale]}/>
+                            :
+                            null
+                           }
+                        </div>
+                        : null
                         }
-**/}
+
                         {!this.state.suggestionsLoading && this.state.suggestions.length === 0 ?
                             <div className="product-page__suggestions product-page__suggestions--no-border"></div>
                             :

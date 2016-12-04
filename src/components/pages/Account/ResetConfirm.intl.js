@@ -11,7 +11,7 @@ export default {
         title: 'Change Password',
         unknownError: 'Error. Please contact support'
     },
-    pt: {
+    jp: {
         fieldRequired: 'Este campo é obrigatório',
         password: 'Nova Password',
         passwordConfirm: 'Confirmar Password',

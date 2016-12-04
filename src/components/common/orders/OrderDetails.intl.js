@@ -19,7 +19,7 @@ export default {
         total: 'Total',
         vat: 'VAT'
     },
-    pt: {
+    jp: {
         billingDetails: 'Dados de Faturação',
         createdAt: 'Criada em',
         customer: 'Cliente',

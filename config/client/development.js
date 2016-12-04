@@ -4,7 +4,7 @@ export default {
     app: {
         title: 'YAMACITY',
         locale: {
-            available: ['en', 'pt'],
+            available: ['en', 'jp', 'pt'],
             default: 'en'
         }
     },

@@ -6,7 +6,7 @@ export default {
         name: 'Full Name',
         save: 'Save'
     },
-    pt: {
+    jp: {
         edit: 'Editar',
         email: 'Email',
         fieldRequired: 'Este campo é obrigatório',

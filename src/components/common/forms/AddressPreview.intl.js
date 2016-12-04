@@ -4,7 +4,7 @@ export default {
         edit: 'Edit',
         vatLabel: 'VAT'
     },
-    pt: {
+    jp: {
         delete: 'Apagar',
         edit: 'Editar',
         vatLabel: 'NIF'

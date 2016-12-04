@@ -6,7 +6,7 @@ export default {
         validNumber: 'Please provide a valid number',
         useShippingAddress: 'Use shipping address for billing'
     },
-    pt: {
+    jp: {
         paymentMethodLabel: 'Selecione Método de Pagamento',
         phoneNumber: 'Número de telemóvel',
         save: 'Guardar',

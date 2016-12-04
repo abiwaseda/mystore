@@ -13,7 +13,7 @@ export default {
         successModalBody: 'Your account will be activated after you follow the confirmation link in the email that will be sent shortly.',
         title: 'Register Account'
     },
-    pt: {
+    jp: {
         email: 'E-mail',
         fieldRequired: 'Este campo é obrigatório',
         login: 'Login',

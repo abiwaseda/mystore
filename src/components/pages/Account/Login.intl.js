@@ -14,7 +14,7 @@ export default {
         unknownStatus: 'Error. Please contact support',
         yes: 'Yes'
     },
-    pt: {
+    jp: {
         disabled: 'A sua conta está desactivada',
         email: 'E-mail',
         fieldRequired: 'Este campo é obrigatório',

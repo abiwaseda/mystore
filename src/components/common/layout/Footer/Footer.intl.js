@@ -5,7 +5,7 @@ export default {
         socialTitle: 'Social',
         storesTitle: 'Our Offices'
     },
-    pt: {
+    jp: {
         infoTitle: 'Informações',
         newsletterTitle: 'Últimas Novidades',
         socialTitle: 'Siga-nos',

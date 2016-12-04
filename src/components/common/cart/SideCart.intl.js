@@ -6,7 +6,7 @@ export default {
         header: 'Your shopping cart',
         subtotal: 'Subtotal'
     },
-    pt: {
+    jp: {
         checkout: 'Finalizar',
         continueShopping: 'Continuar as compras',
         edit: 'Editar',

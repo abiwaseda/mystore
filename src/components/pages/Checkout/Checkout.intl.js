@@ -13,7 +13,7 @@ export default {
         title: 'Checkout',
         tryAgain: 'Try Again'
     },
-    pt: {
+    jp: {
         billingInformation: 'Detalhes de Faturação',
         continueShopping: 'Continuar Compras',
         creatingOrder: 'A criar encomenda',

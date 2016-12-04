@@ -31,7 +31,7 @@ export default {
         vatLabel: 'VAT'
 
     },
-    pt: {
+    jp: {
         address: 'Morada',
         addresses: 'Moradas',
         cancel: 'Cancelar',
