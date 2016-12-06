@@ -4,7 +4,7 @@ export default {
         viewURL: 'URL'
     },
     jp: {
-        delete: 'Remover',
+        delete: '削除',
         viewURL: 'URL'
     }
 };

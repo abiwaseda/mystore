@@ -3,6 +3,6 @@ export default {
         productsList: 'Featured Products'
     },
     jp: {
-        productsList: 'Destaques'
+        productsList: '人気商品'
     }
 };

@@ -3,6 +3,6 @@ export default {
         gallery: 'Gallery'
     },
     jp: {
-        gallery: 'Galeria'
+        gallery: 'ギャラリー'
     }
 };

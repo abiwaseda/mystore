@@ -11,14 +11,14 @@ export default {
         template: 'Template'
     },
     jp: {
-        cancel: 'Cancelar',
-        emailAddress: 'Endereço de Email',
-        fieldRequired: 'Este campo é obrigatório',
-        orderCreated: 'Encomenda Criada',
-        orderPaid: 'Confirmação de Pagamento',
-        orderPendingPayment: 'Lembrete de Pagamento',
-        subject: 'Assunto',
-        submit: 'Enviar',
-        template: 'Template'
+        cancel: 'キャンセル',
+        emailAddress: 'Eメールアドレス',
+        fieldRequired: 'このフィールドは必須です',
+        orderCreated: '注文作成した',
+        orderPaid: '決済確認',
+        orderPendingPayment: '支払いリマインダ',
+        subject: 'テーマ',
+        submit: '提出',
+        template: 'テンプレート'
     }
 };

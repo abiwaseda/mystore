@@ -4,7 +4,7 @@ export default {
         previous: 'Previous'
     },
     jp: {
-        next: 'Próxima',
-        previous: 'Anterior'
+        next: '次',
+        previous: '前'
     }
 };

@@ -5,8 +5,8 @@ export default {
         summary: 'Summary'
     },
     jp: {
-        edit: 'Editar',
-        preview: 'Pré-Visualizar',
-        summary: 'Resumo'
+        edit: '編集',
+        preview: 'プレビュー',
+        summary: '一覧'
     }
 };

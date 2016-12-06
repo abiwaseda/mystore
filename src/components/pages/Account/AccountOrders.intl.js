@@ -9,12 +9,12 @@ export default {
         viewDetails: 'View Details'
     },
     jp: {
-        dateHeading: 'Data',
-        history: 'Histórico',
+        dateHeading: '日付',
+        history: '履歴',
         idHeading: 'ID',
-        noOrders: 'Ainda não fez nenhuma encomenda :(',
-        statusHeading: 'Estado',
-        title: 'Última Encomenda',
-        viewDetails: 'Ver Detalhes'
+        noOrders: 'まだ何も注文していない',
+        statusHeading: 'ステータス',
+        title: '注文履歴',
+        viewDetails: '詳細を表示'
     }
 };

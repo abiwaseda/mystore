@@ -9,12 +9,12 @@ export default {
         viewAllArticles: 'View all articles'
     },
     jp: {
-        headline: 'Na nossa secção de conteúdos poderá encontrar artigos relevantes e detalhados sobre bebés dos 0 aos 18 meses. Tal como os nossos brinquedos, procuramos ajudá-lo e acompanhá-lo nas diversas etapas do desenvolvimento e a perceber melhor os desafios e alegrias que o esperam :) Se tiver dúvidas ou questões, não hesite em contactar-nos!',
-        newsletterCta: 'Quer ser o primeiro a receber novidades?',
-        noResults: 'A sua selecção não possui resultados',
-        pageTitle: 'Conteúdos',
-        suggestedProducts: 'Produtos Sugeridos',
-        title: 'Conteúdos {appTitle}',
-        viewAllArticles: 'Ver todos os artigos'
+        headline: 'ご不明な点がございましたら、お気軽にお問い合わせください',
+        newsletterCta: 'まずニュースを聞きたいですか？',
+        noResults: 'あなたの選択は結果がありません',
+        pageTitle: 'コンテンツ',
+        suggestedProducts: '推奨の商品',
+        title: 'コンテンツ {appTitle}',
+        viewAllArticles: 'すべての記事を見'
     }
 };

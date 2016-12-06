@@ -10,13 +10,13 @@ export default {
         shipped: 'Shipped'
     },
     jp: {
-        created: 'Criada',
-        pendingPayment: 'Pagamento Pendente',
-        paymentError: 'Erro no Pagamento',
-        paid: 'Paga',
-        canceled: 'Cancelada',
-        processing: 'Em Processo',
-        ready: 'Pronta',
-        shipped: 'Enviada'
+        created: '作成済み',
+        pendingPayment: '支払いが保留中',
+        paymentError: '支払いエラー',
+        paid: '支払い済み',
+        canceled: 'キャンセル',
+        processing: '処理中',
+        ready: '準備完了',
+        shipped: '出荷'
     }
 }

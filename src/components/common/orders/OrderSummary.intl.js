@@ -7,10 +7,10 @@ export default {
         total: 'Total'
     },
     jp: {
-        name: 'Nome',
-        quantityAndPrice: 'Qtd / Preço',
-        shipping: 'Envio',
-        subTotal: 'Sub-total',
-        total: 'Total'
+        name: '名前',
+        quantityAndPrice: '数量 / 価格',
+        shipping: '配送',
+        subTotal: '小計',
+        total: '合計'
     }
 };

@@ -4,6 +4,6 @@ export default {
         betaMode: 'The site is in beta testing mode. Checkout wont charge anything'
     },
     jp: {
-        freeShipping: 'Portes grátis para compras >'
+        freeShipping: '送料無料>'
     }
 };

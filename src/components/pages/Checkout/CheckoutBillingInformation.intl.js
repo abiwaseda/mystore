@@ -7,10 +7,10 @@ export default {
         useShippingAddress: 'Use shipping address for billing'
     },
     jp: {
-        paymentMethodLabel: 'Selecione Método de Pagamento',
-        phoneNumber: 'Número de telemóvel',
-        save: 'Guardar',
-        validNumber: 'Por favor indique um número válido',
-        useShippingAddress: 'Usar o endereço de envio para dados de faturação'
+        paymentMethodLabel: 'お支払い方法を選択ください',
+        phoneNumber: '携帯電話番号',
+        save: '保存',
+        validNumber: '有効な数値を入力してください。',
+        useShippingAddress: '請求先は住所と同じいにする'
     }
 };

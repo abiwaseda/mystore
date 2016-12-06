@@ -3,6 +3,6 @@ export default {
         readMore: 'Read more'
     },
     jp: {
-        readMore: 'Ler mais'
+        readMore: '続きを読む'
     }
 };

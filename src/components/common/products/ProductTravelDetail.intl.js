@@ -6,9 +6,9 @@ export default {
         scheduleLabel: 'Schedule',
     },
     jp: {
-        location: 'Location',
-        duration: 'Duration',
-        provided: 'Plan Includes',
-        scheduleLabel: 'Schedule',
+        location: 'ロケーション',
+        duration: '期間',
+        provided: 'プラン含む',
+        scheduleLabel: 'スケジュール',
     }
 };

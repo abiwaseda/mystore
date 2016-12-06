@@ -4,6 +4,6 @@ export default {
 
     },
     jp: {
-        title: 'Detalhes da Encomenda'
+        title: '注文詳細'
     }
 };

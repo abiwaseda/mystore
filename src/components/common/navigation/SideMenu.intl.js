@@ -8,11 +8,11 @@ export default {
         register: 'Register'
     },
     jp: {
-        hi: 'Olá',
-        login: 'Login',
-        logout: 'Logout',
-        homepage: 'Página Principal',
-        myAccount: 'A Minha Conta',
-        register: 'Registar'
+        hi: 'Hi',
+        login: 'ログイン',
+        logout: 'ログアウト',
+        homepage: 'ホームページ',
+        myAccount: 'アカウント',
+        register: '登録'
     }
 };

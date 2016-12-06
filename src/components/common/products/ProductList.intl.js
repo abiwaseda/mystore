@@ -3,6 +3,6 @@ export default {
         noResults: 'Your selection did not match any results'
     },
     jp: {
-        noResults: 'A sua selecção não possui produtos associados'
+        noResults: 'あなたの選択は、関連する商品はありません'
     }
 };

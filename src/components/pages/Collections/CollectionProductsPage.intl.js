@@ -5,8 +5,8 @@ export default {
         productsList: 'Products'
     },
     jp: {
-        homepage: 'Página Principal',
-        pagination: 'Página {currentPage} de {totalPages}',
-        productsList: 'Produtos'
+        homepage: 'ホーム',
+        pagination: 'ページ {currentPage} / {totalPages}',
+        productsList: '商品'
     }
 };

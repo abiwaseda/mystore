@@ -6,9 +6,9 @@ export default {
         storesTitle: 'Our Offices'
     },
     jp: {
-        infoTitle: 'Informações',
-        newsletterTitle: 'Últimas Novidades',
-        socialTitle: 'Siga-nos',
-        storesTitle: 'Lojas'
+        infoTitle: '情報',
+        newsletterTitle: '最新ニュース',
+        socialTitle: 'ソーシャル',
+        storesTitle: 'オフィス'
     }
 };

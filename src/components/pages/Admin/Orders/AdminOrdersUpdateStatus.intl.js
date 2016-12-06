@@ -11,14 +11,14 @@ export default {
         submit: 'Submit'
     },
     jp: {
-        cancel: 'Cancelar',
-        cancelOrder: 'Cancelada',
-        description: 'Descrição',
-        fieldRequired: 'Este campo é obrigatório',
-        processing: 'Em Processamento',
-        ready: 'Pronta para Enviar',
-        shipped: 'Enviada',
-        status: 'Estado',
-        submit: 'Submeter'
+        cancel: 'キャンセル',
+        cancelOrder: 'キャンセル',
+        description: '説明',
+        fieldRequired: 'このフィールドは必須です',
+        processing: '処理',
+        ready: '送信できる',
+        shipped: '出荷された',
+        status: '状態',
+        submit: '提出'
     }
 };

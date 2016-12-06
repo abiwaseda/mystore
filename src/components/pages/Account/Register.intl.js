@@ -15,16 +15,16 @@ export default {
     },
     jp: {
         email: 'E-mail',
-        fieldRequired: 'Este campo é obrigatório',
-        login: 'Login',
-        name: 'Nome Completo',
-        password: 'Palavra-passe',
-        passwordConfirm: 'Confirmar palavra-passe',
-        passwordMismatch: 'As palavras-passe não são iguais',
-        submit: 'Registar',
+        fieldRequired: 'このフィールドは必須です',
+        login: 'ログイン',
+        name: '氏名',
+        password: 'パスワード',
+        passwordConfirm: 'パスワードの確認',
+        passwordMismatch: 'パスワードが同じではありません',
+        submit: '登録',
         successModalContinue: 'OK',
-        successModalTitle: 'Conta Criada',
-        successModalBody: 'Para activar a sua conta, siga as instruções que lhe serão enviadas de seguida por email.',
-        title: 'Criar Conta'
+        successModalTitle: 'アカウントを作成しました',
+        successModalBody: 'アカウントを有効にするには、メールに続いて送信される指示に従ってください。',
+        title: 'アカウントの作成'
     }
 };

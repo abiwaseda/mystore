@@ -7,10 +7,10 @@ export default {
         save: 'Save'
     },
     jp: {
-        edit: 'Editar',
-        email: 'Email',
-        fieldRequired: 'Este campo é obrigatório',
-        name: 'Nome Completo',
-        save: 'Guardar'
+        edit: '編集',
+        email: 'Eメール',
+        fieldRequired: 'このフィールドは必須です',
+        name: '氏名',
+        save: '保存'
     }
 };

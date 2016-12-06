@@ -3,6 +3,6 @@ export default {
         header: 'Logging out...'
     },
     jp: {
-        header: 'Terminando a sessão...'
+        header: 'セッションの終了...'
     }
 };

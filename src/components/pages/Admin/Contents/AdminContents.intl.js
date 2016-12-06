@@ -14,17 +14,17 @@ export default {
         typeHeading: 'Type'
     },
     jp: {
-        article: 'Artigo',
-        banner: 'Banner',
-        enabledHeading: 'Activado',
-        homepage: 'Página Principal',
-        nameHeading: 'Nome',
-        new: 'Novo',
-        newModalTitle: 'Criar novo conteúdo',
-        noType: 'Não Definido',
-        productPage: 'Página de Produto',
-        tagsHeading: 'Tags',
-        title: 'Conteúdos',
-        typeHeading: 'Tipo'
+        article: '記事',
+        banner: 'バナー',
+        enabledHeading: '有効',
+        homepage: 'ホーム',
+        nameHeading: '名前',
+        new: '新しい',
+        newModalTitle: '新しいコンテンツを作成。',
+        noType: '定義されていません',
+        productPage: '製品ページ',
+        tagsHeading: 'タグ',
+        title: 'コンテンツ',
+        typeHeading: 'タイプ'
     }
 };

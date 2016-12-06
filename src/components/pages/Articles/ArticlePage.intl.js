@@ -8,11 +8,11 @@ export default {
         viewAllArticles: 'View all articles'
     },
     jp: {
-        articleNotFound: 'Artigo Não Encontrado',
-        newsletterCta: 'Gostou do artigo?',
-        invalidArticle: 'Artigo Inválido',
-        suggestedArticles: 'Artigos Relacionados',
-        suggestedProducts: 'Produtos Sugeridos',
-        viewAllArticles: 'Ver todos os artigos'
+        articleNotFound: '記事が見つかりません',
+        newsletterCta: '記事が好きでしたか？',
+        invalidArticle: '無効な記事',
+        suggestedArticles: '関連記事',
+        suggestedProducts: 'おすすめの商品',
+        viewAllArticles: 'すべての記事を見る'
     }
 };

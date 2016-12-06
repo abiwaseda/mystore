@@ -117,11 +117,11 @@ class ProductListingPage extends React.Component {
         // Products SideMenu
         var filters = [
             {
-                name: {en: 'Categories', pt: 'Categorias'},
+                name: {en: 'Categories', jp: 'カテゴリー'},
                 collections: this.state.categories
             },
             {
-                name: {en: 'Collections', pt: 'Colecções'},
+                name: {en: 'Collections', jp: 'コレクション'},
                 collections: this.state.collections
             }
         ];

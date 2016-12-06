@@ -8,11 +8,11 @@ export default {
         productsList: 'Products'
     },
     jp: {
-        addToCart: 'Comprar',
-        crossSell: 'Outros produtos desta colecção',
-        descriptionLabel: 'Descrição',
-        homepage: 'Página Principal',
-        outOfStock: 'Esgotado',
-        productsList: 'Produtos'
+        addToCart: 'カートに追加',
+        crossSell: 'このコレクションの他の商品',
+        descriptionLabel: '説明',
+        homepage: 'ホーム',
+        outOfStock: '在庫切れ',
+        productsList: '商品'
     }
 };

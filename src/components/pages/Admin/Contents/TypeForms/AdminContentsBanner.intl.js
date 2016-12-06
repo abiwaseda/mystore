@@ -5,8 +5,8 @@ export default {
         link: 'Link'
     },
     jp: {
-        delete: 'Apagar',
-        imageLabel: 'Banner Image URL',
-        link: 'Link'
+        delete: '削除',
+        imageLabel: 'バナー画像のUR',
+        link: 'リンク'
     }
 };

@@ -3,6 +3,6 @@ export default {
         update: 'Update'
     },
     jp: {
-        update: 'Actualizar'
+        update: '更新'
     }
 };

@@ -30,7 +30,7 @@ class AdminContentsAddForm extends React.Component {
     //*** Initial State ***//
 
     state = {
-        name: {en: '', pt: ''},
+        name: {en: '', jp: ''},
         type: undefined,
         fieldErrors: {}
     };
@@ -62,8 +62,8 @@ class AdminContentsAddForm extends React.Component {
         if (!this.state.name.en) {
             fieldErrors['name.en'] = intlStore.getMessage(intlData, 'fieldRequired');
         }
-        if (!this.state.name.pt) {
-            fieldErrors['name.pt'] = intlStore.getMessage(intlData, 'fieldRequired');
+        if (!this.state.name.jp) {
+            fieldErrors['name.jp'] = intlStore.getMessage(intlData, 'fieldRequired');
         }
         this.setState({fieldErrors: fieldErrors});
 
@@ -116,9 +116,9 @@ class AdminContentsAddForm extends React.Component {
                                 error={fieldError('name.en')} />
                 </div>
                 <div className="admin-contents-add-form__item">
-                    <InputField label={intlStore.getMessage(intlData, 'name') + ' (PT)'}
-                                onChange={this.handleNameChange.bind(null, 'pt')}
-                                error={fieldError('name.pt')} />
+                    <InputField label={intlStore.getMessage(intlData, 'name') + ' (JP)'}
+                                onChange={this.handleNameChange.bind(null, 'jp')}
+                                error={fieldError('name.jp')} />
                 </div>
                 <div className="admin-contents-add-form__actions">
                     <div className="admin-contents-add-form__button">

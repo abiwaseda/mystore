@@ -5,8 +5,8 @@ export default {
         title: 'Dashboard'
     },
     jp: {
-        homepageSettingsTitle: 'Configurações da Página Principal',
-        mainNavigationSettingsTitle: 'Ordernar Menu Principal',
-        title: 'Dashboard'
+        homepageSettingsTitle: 'ホームページの設定',
+        mainNavigationSettingsTitle: 'メインナビゲーション注文',
+        title: 'ダッシュボード'
     }
 };

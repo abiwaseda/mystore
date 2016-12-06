@@ -4,7 +4,7 @@ export default {
         shippingMethodLabel: 'Select Shipping Method'
     },
     jp: {
-        save: 'Guardar',
-        shippingMethodLabel: 'Selecione Método de Envio'
+        save: '保存',
+        shippingMethodLabel: '配送方法選択'
     }
 };
