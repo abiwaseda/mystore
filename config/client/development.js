@@ -4,9 +4,10 @@ export default {
     app: {
         title: 'YAMACITY',
         locale: {
-            available: ['en', 'jp', 'pt'],
+            available: ['en', 'jp'],
             default: 'en'
-        }
+        },
+        email: 'test-support@yamacity.com'
     },
     api: {
         atlas: {

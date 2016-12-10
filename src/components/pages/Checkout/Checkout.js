@@ -333,7 +333,7 @@ class Checkout extends React.Component {
 
     sendOrderCreateEmail = (id) => {
         let emailInfo = {
-            email: "adhikari.abi@gmail.com",
+            email: config.app.email,
             subject: "New Order Received : " + id,
             template: "order.created"
 

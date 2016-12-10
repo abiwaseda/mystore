@@ -7,7 +7,9 @@ export default {
         canceled: 'Canceled',
         processing: 'Processing',
         ready: 'Ready',
-        shipped: 'Shipped'
+        shipped: 'Shipped',
+        authorizedPayment: 'Payment Authorized',
+        capturedPayment: 'Payment Captured'
     },
     jp: {
         created: '作成済み',
@@ -17,6 +19,8 @@ export default {
         canceled: 'キャンセル',
         processing: '処理中',
         ready: '準備完了',
-        shipped: '出荷'
+        shipped: '出荷',
+        authorizedPayment: '支払いオーソリ済み',
+        capturedPayment: '支払い確定済み'
     }
 }

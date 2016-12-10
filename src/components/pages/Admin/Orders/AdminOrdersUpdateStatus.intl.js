@@ -8,7 +8,9 @@ export default {
         ready: 'Ready for Shipping',
         shipped: 'Shipped',
         status: 'Status',
-        submit: 'Submit'
+        submit: 'Submit',
+        authorizedPayment: 'Payment Authorize',
+        capturedPayment: 'Payment Capture'
     },
     jp: {
         cancel: 'キャンセル',
@@ -19,6 +21,8 @@ export default {
         ready: '送信できる',
         shipped: '出荷された',
         status: '状態',
-        submit: '提出'
+        submit: '提出',
+        authorizedPayment: '支払いオーソリする',
+        capturedPayment: '支払い確定する'
     }
 };
