@@ -47,7 +47,7 @@ class ProductTravelDetailSchedule extends React.Component {
         //
         return (
             <div>
-                {this.props.others.schedule && this.props.others.schedule.length !== 0 ?
+                {this.props.others.schedule && Object.keys(this.props.others.schedule).length !== 0 ?
                 <div>
                     <div className="product-page__description product-page__description-label">
                         <Heading size="medium">

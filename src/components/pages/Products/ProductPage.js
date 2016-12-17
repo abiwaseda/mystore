@@ -243,8 +243,6 @@ class ProductPage extends React.Component {
           });
         }
 
-        let locale = intlStore.getCurrentLocale();
-
         //
         // Return
         //
@@ -372,11 +370,11 @@ class ProductPage extends React.Component {
                                 </Text>
                             </div>
                         </div>
-                        {this.state.product.others[locale] ?
+                        {this.state.product.others[intlStore.getCurrentLocale()] ?
                         <div>
-                           {this.state.product.others[locale].schedule && this.state.product.others[locale].schedule.length !== 0 ?
+                           {this.state.product.others[intlStore.getCurrentLocale()].schedule && Object.keys(this.state.product.others[intlStore.getCurrentLocale()].schedule).length !== 0 ?
                                 <ProductTravelDetailSchedule
-                                others={this.state.product.others[locale]}/>
+                                others={this.state.product.others[intlStore.getCurrentLocale()]}/>
                             :
                             null
                            }
