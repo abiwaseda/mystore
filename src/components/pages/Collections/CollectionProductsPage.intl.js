@@ -4,9 +4,9 @@ export default {
         pagination: 'Page {currentPage} of {totalPages}',
         productsList: 'Products'
     },
-    pt: {
-        homepage: 'Página Principal',
-        pagination: 'Página {currentPage} de {totalPages}',
-        productsList: 'Produtos'
+    jp: {
+        homepage: 'ホーム',
+        pagination: 'ページ {currentPage} / {totalPages}',
+        productsList: '商品'
     }
 };

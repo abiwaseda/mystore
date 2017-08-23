@@ -1,12 +1,12 @@
 export default {
     en: {
-        homepageFeaturedCollections: 'Featured Categories & Collections',
+        homepageFeaturedCollections: 'Featured Categories and Collection',
         orderBanners: 'Organize Banners',
         update: 'Update'
     },
-    pt: {
-        homepageFeaturedCollections: 'Categorias e Colecções Destacadas',
-        orderBanners: 'Organizar Banners',
-        update: 'Actualizar'
+    jp: {
+        homepageFeaturedCollections: 'おすすめのカテゴリー＆コレクション',
+        orderBanners: 'バナーを整理する',
+        update: '更新'
     }
 };

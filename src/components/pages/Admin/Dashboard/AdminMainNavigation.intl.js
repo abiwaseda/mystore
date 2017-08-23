@@ -2,7 +2,7 @@ export default {
     en: {
         update: 'Update'
     },
-    pt: {
-        update: 'Actualizar'
+    jp: {
+        update: '更新'
     }
 };

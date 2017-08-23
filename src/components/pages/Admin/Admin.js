@@ -70,9 +70,9 @@ class Admin extends React.Component {
         return (
             <div className="admin">
                 <div className="admin-header">
-                    <div className="admin-title">
+                    {/**<div className="admin-title">
                         <Heading size="large">Admin</Heading>
-                    </div>
+                    </div>**/}
                     <div className="admin-nav">
                         <MainNavigation links={links} />
                     </div>

@@ -22,6 +22,7 @@ import createCheckout from '../../../actions/Checkout/createCheckout';
 import createOrder from '../../../actions/Orders/createOrder';
 import createStripeOrder from '../../../actions/Orders/createStripeOrder';
 import updateCheckout from '../../../actions/Checkout/updateCheckout';
+import sendOrderEmail from '../../../actions/Orders/sendOrderEmail';
 
 // Required components
 import Button from '../../common/buttons/Button';
@@ -93,7 +94,8 @@ class Checkout extends React.Component {
         paymentInstrument: {ready: false},
 
         showOrderCreatedModal: false,
-        showOrderErrorModal: false
+        showOrderErrorModal: false,
+        key: config.stripePayments.publicKey
     };
 
     //*** Component Lifecycle ***//
@@ -329,6 +331,16 @@ class Checkout extends React.Component {
         this.context.executeAction(createCart);
     };
 
+    sendOrderCreateEmail = (id) => {
+        let emailInfo = {
+            email: config.app.email,
+            subject: "New Order Received : " + id,
+            template: "order.created"
+
+            }
+        this.context.executeAction(sendOrderEmail, {orderId: id, data: emailInfo});
+    };
+
     //
     // Stripe
     //
@@ -346,8 +358,10 @@ class Checkout extends React.Component {
                 chargeType: this.state.checkout.paymentMethod,
                 provider: "stripe",
                 instrument: this.state.paymentInstrument.params || {}
-            }
+            },
+            mailFun : this.sendOrderCreateEmail
         };
+
         this.context.executeAction(createStripeOrder, payload);
 
       } else {
@@ -362,7 +376,6 @@ class Checkout extends React.Component {
         //
         // Helper methods & variables
         //
-
         let intlStore = this.context.getStore(IntlStore);
         let routeParams = {locale: this.context.getStore(IntlStore).getCurrentLocale()}; // Base route params
 
@@ -514,6 +527,7 @@ class Checkout extends React.Component {
                                 <CheckoutSummary checkout={this.state.checkout}
                                                  useShippingAddressForBilling={this.state.useShippingAddressForBilling}
                                                  readyForCheckout={this.state.checkout.ready}
+                                                 pkey={this.state.key}
                                                  onStripeClick={this.onToken}
                                                  onCheckoutClick={this.handleCheckoutClick}/>
                             </CheckoutSection>

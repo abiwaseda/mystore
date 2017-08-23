@@ -8,13 +8,13 @@ export default {
         name: 'Name',
         type: 'Type'
     },
-    pt: {
-        add: 'Adicionar',
-        article: 'Artigo',
-        banner: 'Banner',
-        cancel: 'Cancelar',
-        fieldRequired: 'Este campo é obrigatório',
-        name: 'Nome',
-        type: 'Tipo'
+    jp: {
+        add: '追加',
+        article: '記事',
+        banner: 'バナー',
+        cancel: 'キャンセル',
+        fieldRequired: 'このフィールドは必須です',
+        name: '名前',
+        type: 'タイプ'
     }
 };

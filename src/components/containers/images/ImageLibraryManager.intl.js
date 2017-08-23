@@ -2,7 +2,7 @@ export default {
     en: {
         gallery: 'Gallery'
     },
-    pt: {
-        gallery: 'Galeria'
+    jp: {
+        gallery: 'ギャラリー'
     }
 };

@@ -8,13 +8,13 @@ export default {
         statusHeading: 'Status',
         title: 'Orders'
     },
-    pt: {
-        dateHeading: 'Data',
-        emailHeading: 'Email',
+    jp: {
+        dateHeading: '日付',
+        emailHeading: 'Eメール',
         idHeading: 'ID',
-        noResults: 'Não existem resultados',
-        showAll: 'Mostrar Todas',
-        statusHeading: 'Estado',
-        title: 'Encomendas'
+        noResults: '結果はありません',
+        showAll: 'すべて表示',
+        statusHeading: '状態',
+        title: '受注'
     }
 }

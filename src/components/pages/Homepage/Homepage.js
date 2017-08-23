@@ -122,11 +122,11 @@ class Homepage extends React.Component {
             if (this.state.featuredCategories.length > 0 || this.state.featuredCollections.length > 0) {
                 return [
                     {
-                        name: {en: 'Categories', pt: 'Categorias'},
+                        name: {en: 'Categories', jp: 'カテゴリー'},
                         collections: this.state.featuredCategories
                     },
                     {
-                        name: {en: 'Collections', pt: 'Colecções'},
+                        name: {en: 'Collections', jp: 'コレクション'},
                         collections: this.state.featuredCollections
                     }
                 ];

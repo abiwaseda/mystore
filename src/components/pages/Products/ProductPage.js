@@ -33,6 +33,8 @@ import NotFound from '../../pages/NotFound/NotFound';
 import ProductSuggestions from '../../common/products/ProductSuggestions';
 import QuantitySelector from '../../common/forms/QuantitySelector';
 import Text from '../../common/typography/Text';
+import ProductTravelDetail from '../../common/products/ProductTravelDetail';
+import ProductTravelDetailSchedule from '../../common/products/ProductTravelDetailSchedule';
 
 // Translation data for this component
 import intlData from './ProductPage.intl';
@@ -291,37 +293,18 @@ class ProductPage extends React.Component {
                                         <div style={{display: 'none'}} itemProp="priceCurrency">
                                             {this.state.product.pricing.currency}
                                         </div>
+                                        <div>
+                                            <Text size="medium" weight="bold">
+                                                <FormattedNumber
+                                                    value={this.state.product.pricing.retail}
+                                                    style="currency"
+                                                    currency={this.state.product.pricing.currency} />
+                                            </Text>
+                                        </div>
                                     </div>
                                     :
                                     null
                                 }
-                                <div className="product-table">
-                                    <table>
-                                        <tr>
-                                            <th>Price</th>
-                                            <td>
-                                                <Text size="medium" weight="bold">
-                                                    <FormattedNumber
-                                                        value={this.state.product.pricing.retail}
-                                                        style="currency"
-                                                        currency={this.state.product.pricing.currency} />
-                                                </Text>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>Location</th>
-                                            <td>{this.state.product.others.location}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Duration</th>
-                                            <td>{this.state.product.others.duration}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Plan Includes</th>
-                                            <td>{this.state.product.others.includes}</td>
-                                        </tr>
-                                    </table>
-                                </div>
 
                                 <div className="product-page__sku">
                                     <Text size="small">
@@ -352,6 +335,13 @@ class ProductPage extends React.Component {
                                     </div>
                                 </div>
 
+                                {this.state.product.others[intlStore.getCurrentLocale()] ?
+                                    <ProductTravelDetail
+                                    others={this.state.product.others[intlStore.getCurrentLocale()]}/>
+                                :
+                                null
+                                }
+
 
 
                                 {this.state.contents.map(function (content) {
@@ -380,35 +370,16 @@ class ProductPage extends React.Component {
                                 </Text>
                             </div>
                         </div>
-
-                        {this.state.product.others.schedule && Object.keys(this.state.product.others.schedule).length !== 0 ?
+                        {this.state.product.others[intlStore.getCurrentLocale()] ?
                         <div>
-                            <div className="product-page__description product-page__description-label">
-                                <Heading size="medium">
-                                    <FormattedMessage
-                                        message={intlStore.getMessage(intlData, 'scheduleLabel')}
-                                        locales={intlStore.getCurrentLocale()} />
-                                </Heading>
-                            </div>
-                            <div className="product-table">
-                                <table>
-                                    <tr>
-                                        <th>Day</th>
-                                        <th>Schedule</th>
-                                    </tr>
-                                    {mapobject(this.state.product.others.schedule, (key, value) => {
-                                        return (
-                                            <tr>
-                                                <td>{key}</td>
-                                                <td>{value}</td>
-                                            </tr>
-                                        );
-                                    })}
-                                </table>
-                             </div>
-                         </div>
-                        :
-                        null
+                           {this.state.product.others[intlStore.getCurrentLocale()].schedule && Object.keys(this.state.product.others[intlStore.getCurrentLocale()].schedule).length !== 0 ?
+                                <ProductTravelDetailSchedule
+                                others={this.state.product.others[intlStore.getCurrentLocale()]}/>
+                            :
+                            null
+                           }
+                        </div>
+                        : null
                         }
 
                         {!this.state.suggestionsLoading && this.state.suggestions.length === 0 ?

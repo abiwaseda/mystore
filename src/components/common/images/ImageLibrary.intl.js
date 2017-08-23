@@ -3,8 +3,8 @@ export default {
         delete: 'Delete',
         viewURL: 'URL'
     },
-    pt: {
-        delete: 'Remover',
+    jp: {
+        delete: '削除',
         viewURL: 'URL'
     }
 };

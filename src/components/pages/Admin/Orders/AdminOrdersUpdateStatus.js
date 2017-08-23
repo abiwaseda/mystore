@@ -97,7 +97,7 @@ class AdminOrdersUpdateStatus extends React.Component {
         let intlStore = this.context.getStore(IntlStore);
 
         let statusOptions = [];
-        if (['created', 'pendingPayment', 'paymentError', 'paid', 'processing', 'ready'].indexOf(this.props.order.status) !== -1) {
+        if (['created', 'pendingPayment', 'paymentError', 'paid', 'processing', 'ready', 'authorizedPayment', 'capturedPayment'].indexOf(this.props.order.status) !== -1) {
             statusOptions.push({name: intlStore.getMessage(intlData, 'cancelOrder'), value: 'canceled'});
         }
         if (this.props.order.status === 'paid') {
@@ -108,6 +108,9 @@ class AdminOrdersUpdateStatus extends React.Component {
         }
         if (this.props.order.status === 'ready') {
             statusOptions.push({name: intlStore.getMessage(intlData, 'shipped'), value: 'shipped'});
+        }
+        if (this.props.order.status === 'authorizedPayment') {
+            statusOptions.push({name: intlStore.getMessage(intlData, 'capturedPayment'), value: 'capture'});
         }
 
         //

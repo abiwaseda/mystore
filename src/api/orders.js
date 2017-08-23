@@ -52,11 +52,24 @@ class OrdersAPI {
         });
     }
 
+    /**
+     * Create new Order in Stripe payment
+     */
     createStripeOrder(token) {
-
         return new Promise((resolve, reject) => {
             let payload = JSON.stringify(token);
-            let request = superagent.post(`${this.baseUrl}/charges`).set({'Content-Type': 'application/json; charset=UTF-8'}).send(payload);
+            let request = superagent.post(`${this.baseUrl}/charges/stripe`).set({'Content-Type': 'application/json; charset=UTF-8'}).send(payload);
+            this._wrapAndRequest(request, resolve, reject);
+        });
+    }
+
+    /**
+     * Capture Order in Stripe payment
+     */
+    captureStripeOrder(data) {
+        return new Promise((resolve, reject) => {
+            let payload = JSON.stringify(data);
+            let request = superagent.post(`${this.baseUrl}/charges/stripe`).set({'Content-Type': 'application/json; charset=UTF-8'}).send(payload);
             this._wrapAndRequest(request, resolve, reject);
         });
     }

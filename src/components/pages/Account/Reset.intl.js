@@ -9,14 +9,14 @@ export default {
         title: 'Reset Password',
         unknownError: 'Error. Please contact support'
     },
-    pt: {
+    jp: {
         email: 'E-Mail',
-        fieldRequired: 'Este campo é obrigatório',
-        submit: 'Submeter',
-        successModalBody: 'Irá receber um email em breve com instruções em como proceder à recuperação da sua password.',
+        fieldRequired: 'このフィールドは必須です',
+        submit: '提出',
+        successModalBody: 'パスワードを回復する方法のメールが届きます。',
         successModalContinue: 'OK',
-        successModalTitle: 'Pedido Efetuado',
-        title: 'Recuperar Password',
-        unknownError: 'Erro. Por favor contacte o suporte'
+        successModalTitle: 'リセット依頼',
+        title: 'パスワードのリセット',
+        unknownError: 'エラーが発生しました、サポートに連絡してください'
     }
 };

@@ -13,18 +13,18 @@ export default {
         submit: 'Submit',
         vatin: 'VAT Identification Number'
     },
-    pt: {
-        address: 'Morada',
-        cancel: 'Cancelar',
-        city: 'Cidade',
-        country: 'País',
-        fieldRequired: 'Este campo é obrigatório',
-        name: 'Nome Completo',
-        phoneNumber: 'Número de Telefone',
-        postalCode: 'Código Postal',
-        savedAddresses: 'Escolha um dos seus endereços guardados',
-        state: 'Estado',
-        submit: 'Submeter',
-        vatin: 'Número de Identificação Fiscal'
+    jp: {
+        address: '住所',
+        cancel: 'キャンセル',
+        city: '街',
+        country: '国',
+        fieldRequired: 'このフィールドは必須です',
+        name: '氏名',
+        phoneNumber: '電話番号',
+        postalCode: '郵便番号',
+        savedAddresses: '保存したアドレスのいずれかを選択してください',
+        state: '都市',
+        submit: '提出',
+        vatin: '納税者番号'
     }
 };

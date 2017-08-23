@@ -8,13 +8,13 @@ export default {
         shippingMethod: 'Shipping Method',
         whatsMissing: 'What\'s missing?'
     },
-    pt: {
-        billingAddress: 'Morada de Faturação',
-        checkout: 'Finalizar',
-        customerDetails: 'Detalhes do Cliente',
-        paymentMethod: 'Método de Pagamento',
-        shippingAddress: 'Morada de Envio',
-        shippingMethod: 'Método de Envio',
-        whatsMissing: 'O que falta para poder finalizar?'
+    jp: {
+        billingAddress: '請求先住所',
+        checkout: '決済',
+        customerDetails: 'お客様詳細',
+        paymentMethod: 'お支払方法',
+        shippingAddress: '発送先',
+        shippingMethod: '配送方法',
+        whatsMissing: 'また不足の項目？'
     }
 };

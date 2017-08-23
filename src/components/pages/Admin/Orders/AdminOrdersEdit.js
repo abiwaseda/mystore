@@ -14,6 +14,7 @@ import IntlStore from '../../../../stores/Application/IntlStore';
 import fetchOrderAndCheckIfFound from '../../../../actions/Orders/fetchOrderAndCheckIfFound';
 import sendOrderEmail from '../../../../actions/Orders/sendOrderEmail';
 import updateOrderStatus from '../../../../actions/Orders/updateOrderStatus';
+import captureStripeOrder from '../../../../actions/Orders/captureStripeOrder';
 
 // Required components
 import Button from '../../../common/buttons/Button';
@@ -122,11 +123,21 @@ class AdminOrdersEdit extends React.Component {
     };
 
     handleUpdateStatusSubmitClick = (data) => {
-        this.context.executeAction(updateOrderStatus, {
-            orderId: this.state.order.id,
-            status: data.status,
-            description: data.description
-        });
+        if (data.status === "canceled") {
+            this.context.executeAction(updateOrderStatus, {
+                orderId: this.state.order.id,
+                status: data.status,
+                description: data.description
+            });
+        }
+        if (data.status === "capture") {
+            this.context.executeAction(captureStripeOrder, {
+                orderId: this.state.order.id,
+                status: data.status,
+                type: 'capture',
+                description: data.description
+            });
+        }
     };
 
     //*** Template ***//
@@ -201,7 +212,7 @@ class AdminOrdersEdit extends React.Component {
                                                       locales={intlStore.getCurrentLocale()} />
                                 </Button>
                             </div>
-                            {['created', 'pendingPayment', 'paid', 'processing', 'ready'].indexOf(this.state.order.status) !== -1 ?
+                            {['created', 'pendingPayment', 'paid', 'processing', 'ready', 'capturedPayment', 'authorizedPayment'].indexOf(this.state.order.status) !== -1 ?
                                 <div className="admin-orders-edit__toolbar-item">
                                     <Button type="primary" onClick={this.handleUpdateStatusClick} disabled={this.state.loading || this.state.saving}>
                                         <FormattedMessage message={intlStore.getMessage(intlData, 'updateStatus')}

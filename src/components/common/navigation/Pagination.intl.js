@@ -3,8 +3,8 @@ export default {
         next: 'Next',
         previous: 'Previous'
     },
-    pt: {
-        next: 'Próxima',
-        previous: 'Anterior'
+    jp: {
+        next: '次',
+        previous: '前'
     }
 };

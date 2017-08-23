@@ -2,7 +2,7 @@ export default {
     en: {
         readMore: 'Read more'
     },
-    pt: {
-        readMore: 'Ler mais'
+    jp: {
+        readMore: '続きを読む'
     }
 };

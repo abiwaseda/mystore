@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
+import config from '../../../config';
 
 // Instantiate logger
 let debug = require('debug')('nicistore');
@@ -31,7 +32,7 @@ class Button extends React.Component {
     //*** Template ***//
 
     render() {
-
+        //console.log("key :"+ this.props.pkey);
         let buttonClass = 'button';
 
         if (['stripe', 'primary'].indexOf(this.props.type) != -1) {
@@ -61,7 +62,7 @@ class Button extends React.Component {
         return (
 
             <StripeCheckout className={buttonClass} token={this.handleClick}
-                      stripeKey="pk_test_t0BfAy7tqOvA3O7XYDUMbTJZ"
+                      stripeKey={this.props.pkey}
                      />
         );
     }

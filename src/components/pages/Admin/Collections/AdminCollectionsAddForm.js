@@ -30,7 +30,7 @@ class AdminCollectionsAddForm extends React.Component {
     //*** Initial State ***//
 
     state = {
-        name: {en: '', pt: ''},
+        name: {en: '', jp: ''},
         tags: [],
         fieldErrors: {}
     };
@@ -62,8 +62,8 @@ class AdminCollectionsAddForm extends React.Component {
         if (!this.state.name.en) {
             fieldErrors.nameEN = intlStore.getMessage(intlData, 'fieldRequired');
         }
-        if (!this.state.name.pt) {
-            fieldErrors.namePT = intlStore.getMessage(intlData, 'fieldRequired');
+        if (!this.state.name.jp) {
+            fieldErrors.nameJP = intlStore.getMessage(intlData, 'fieldRequired');
         }
         this.setState({fieldErrors: fieldErrors});
 
@@ -116,9 +116,9 @@ class AdminCollectionsAddForm extends React.Component {
                                 error={fieldError('nameEN')} />
                 </div>
                 <div className="admin-collections-add-form__item">
-                    <InputField label={intlStore.getMessage(intlData, 'name') + ' (PT)'}
-                                onChange={this.handleNameChange.bind(null, 'pt')}
-                                error={fieldError('namePT')} />
+                    <InputField label={intlStore.getMessage(intlData, 'name') + ' (JP)'}
+                                onChange={this.handleNameChange.bind(null, 'jp')}
+                                error={fieldError('nameJP')} />
                 </div>
                 <div className="admin-collections-add-form__actions">
                     <div className="admin-collections-add-form__button">

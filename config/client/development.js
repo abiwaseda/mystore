@@ -4,9 +4,10 @@ export default {
     app: {
         title: 'YAMACITY',
         locale: {
-            available: ['en', 'pt'],
+            available: ['en', 'jp'],
             default: 'en'
-        }
+        },
+        email: 'test-support@yamacity.com'
     },
     api: {
         atlas: {
@@ -35,5 +36,9 @@ export default {
         enabled: false,
         environment: 'https://api-test.switchpayments.com/v2/',
         publicKey: process.env.SWITCH_PUBLIC_KEY
+    },
+    stripePayments: {
+        //publicKey: process.env.STRIPE_TEST_PUBLIC_KEY
+        publicKey: 'pk_test_t0BfAy7tqOvA3O7XYDUMbTJZ'
     }
 };

@@ -4,9 +4,9 @@ export default {
         newsletterPlaceholder: 'Enter your email address...',
         newsletterSubmitButton: 'Sign Up'
     },
-    pt: {
-        newsletterDescription: 'Mantenha-se actualizado sobre ofertas, novos lançamentos e muito mais!',
-        newsletterPlaceholder: 'Insira o seu email...',
-        newsletterSubmitButton: 'Submeter'
+    jp: {
+        newsletterDescription: '販売、最新リリースなどの最新情報を入手！',
+        newsletterPlaceholder: 'メールアドレスを入力してください...',
+        newsletterSubmitButton: 'Sign Up'
     }
 };

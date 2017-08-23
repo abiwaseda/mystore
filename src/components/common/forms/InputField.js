@@ -48,9 +48,15 @@ class InputField extends React.Component {
 
         let id = `input-field-${this.context.getStore(ApplicationStore).uniqueId()}`;
 
+        let inputClassParent = 'input-field'
         let inputClass = 'input-field__input';
+
         if (this.props.error) {
             inputClass += ' input-field__input--error';
+        }
+
+        if (this.props.className) {
+            inputClassParent += ' '+this.props.className;
         }
 
         let inputType = 'text';
@@ -59,7 +65,7 @@ class InputField extends React.Component {
         }
 
         return (
-            <div className="input-field">
+            <div className={inputClassParent}>
                 {this.props.label ?
                     <div className="input-field__label">
                         <FormLabel for={id} size={this.props.labelSize} weight={this.props.labelWeight}>

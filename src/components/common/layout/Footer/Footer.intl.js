@@ -5,10 +5,10 @@ export default {
         socialTitle: 'Social',
         storesTitle: 'Our Offices'
     },
-    pt: {
-        infoTitle: 'Informações',
-        newsletterTitle: 'Últimas Novidades',
-        socialTitle: 'Siga-nos',
-        storesTitle: 'Lojas'
+    jp: {
+        infoTitle: '情報',
+        newsletterTitle: '最新ニュース',
+        socialTitle: 'ソーシャル',
+        storesTitle: 'オフィス'
     }
 };

@@ -90,7 +90,11 @@ class CheckoutSummary extends React.Component {
                 }
                 <div className="checkout-summary__row checkout-summary__submit">
                     <div className="checkout-summary__submit-button">
-                        <ButtonStripe type="stripe" disabled={!this.props.readyForCheckout} onClick={this.props.onStripeClick}>
+                        <ButtonStripe
+                            type="stripe"
+                            disabled={!this.props.readyForCheckout}
+                            pkey={this.props.pkey}
+                            onClick={this.props.onStripeClick}>
                         </ButtonStripe>
                     </div>
                 </div>

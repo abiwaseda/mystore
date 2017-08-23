@@ -7,12 +7,12 @@ export default {
         updateModalTitle: 'Update Status',
         updateStatus: 'Update'
     },
-    pt: {
-        back: 'Voltar',
-        sendEmail: 'Enviar Email',
-        sendEmailModalTitle: 'Enviar Email',
-        title: 'Detalhes da Encomenda',
-        updateModalTitle: 'Actualizar Estado',
-        updateStatus: 'Actualizar'
+    jp: {
+        back: '戻る',
+        sendEmail: 'メールを送る',
+        sendEmailModalTitle: 'メールを送る',
+        title: '注文詳細',
+        updateModalTitle: '状況更新',
+        updateStatus: '更新'
     }
 };

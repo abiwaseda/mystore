@@ -4,9 +4,9 @@ export default {
         edit: 'Edit',
         vatLabel: 'VAT'
     },
-    pt: {
-        delete: 'Apagar',
-        edit: 'Editar',
-        vatLabel: 'NIF'
+    jp: {
+        delete: '削除',
+        edit: '編集',
+        vatLabel: 'VAT'
     }
 }

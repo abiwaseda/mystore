@@ -7,12 +7,12 @@ export default {
         sku: 'SKU',
         type: 'Type'
     },
-    pt: {
-        add: 'Adicionar',
-        cancel: 'Cancelar',
-        fieldRequired: 'Este campo é obrigatório',
-        name: 'Nome',
+    jp: {
+        add: '追加',
+        cancel: 'キャンセル',
+        fieldRequired: 'このフィールドは必須です',
+        name: '名前',
         sku: 'SKU',
-        type: 'Tipo'
+        type: 'タイプ'
     }
 };

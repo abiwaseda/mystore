@@ -14,19 +14,19 @@ export default {
         title: 'Collections',
         translationsHeading: 'Translations'
     },
-    pt: {
-        category: 'Categoria',
-        collection: 'Colecção',
-        enabledHeading: 'Activada',
-        homepage: 'Página Principal',
-        homepageFeatured: 'Destaque Página Principal',
-        mainNavigation: 'Menu Principal',
-        nameHeading: 'Nome',
-        new: 'Nova',
-        newModalTitle: 'Criar nova colecção',
-        parentHeading: 'Colecção Base',
-        tagsHeading: 'Tags',
-        title: 'Colecções',
-        translationsHeading: 'Traduções'
+    jp: {
+        category: 'カテゴリ',
+        collection: '収集',
+        enabledHeading: '有効',
+        homepage: 'ホームページ',
+        homepageFeatured: 'ホームページのおすすめ',
+        mainNavigation: 'メインナビゲーション',
+        nameHeading: '名前',
+        new: '新しい',
+        newModalTitle: '新しいコレクションを作成',
+        parentHeading: '親コレクション',
+        tagsHeading: 'タグ',
+        title: '収集',
+        translationsHeading: '翻訳'
     }
 };

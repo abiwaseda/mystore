@@ -4,9 +4,9 @@ export default {
         loggingIn: 'Logging in',
         logoutFirst: 'In order to confirm an account you have to logout first'
     },
-    pt: {
-        confirmingAccount: 'Confirmar Conta',
-        loggingIn: 'A iniciar sessão',
-        logoutFirst: 'Para confirmar uma conta é necessário fazer logout primeiro'
+    jp: {
+        confirmingAccount: 'アカウントを確認中',
+        loggingIn: 'ログイン中',
+        logoutFirst: 'アカウントを確認するには、最初にログアウトする必要があります'
     }
 };

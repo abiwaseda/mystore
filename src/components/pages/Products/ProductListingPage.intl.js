@@ -5,10 +5,10 @@ export default {
         pagination: 'Page {currentPage} of {totalPages}',
         productsList: 'Products'
     },
-    pt: {
-        homepage: 'Página Principal',
-        pageTitle: 'Produtos',
-        pagination: 'Página {currentPage} de {totalPages}',
-        productsList: 'Produtos'
+    jp: {
+        homepage: 'ホーム',
+        pageTitle: '商品',
+        pagination: 'ページ {currentPage} / {totalPages}',
+        productsList: '商品'
     }
 };
