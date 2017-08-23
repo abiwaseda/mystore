@@ -14,19 +14,19 @@ export default {
         type: 'Type',
         unsupportedType: 'Unsupported content type'
     },
-    pt: {
-        back: 'Voltar',
-        categories: 'Categorias',
-        collections: 'Colecções',
-        enabled: 'Activado',
-        fieldRequired: 'Este campo é obrigatório',
-        homepage: 'Página Principal',
-        name: 'Nome',
-        productPage: 'Página de Produto',
-        save: 'Guardar',
-        sections: 'Destaque nas Secções',
-        title: 'Editar Conteúdo',
-        type: 'Tipo',
-        unsupportedType: 'O tipo de conteúdo não é suportado'
+    jp: {
+        back: '戻る',
+        categories: 'カテゴリー',
+        collections: '収集',
+        enabled: '有効',
+        fieldRequired: 'このフィールドは必須です',
+        homepage: 'ホームページ',
+        name: '名前',
+        productPage: '製品ページ',
+        save: '保存',
+        sections: 'セクションで紹介',
+        title: '内容編集',
+        type: 'タイプ',
+        unsupportedType: 'コンテンツタイプがサポートされていません。'
     }
 };

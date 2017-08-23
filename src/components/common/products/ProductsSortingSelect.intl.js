@@ -10,15 +10,15 @@ export default {
         sortPriceReverse: 'Price: High to Low',
         sortRecent: 'Date: New to Old'
     },
-    pt: {
-        sortAlphabetically: 'Alfabeticamente: A-Z',
-        sortAlphabeticallyReverse: 'Alfabeticamente: Z-A',
-        sortBestSelling: 'Mais Vendidos',
-        sortFeatured: 'Em Destaque',
-        sortLabel: 'Ordernar por',
-        sortOldest: 'Mais antigos',
-        sortPrice: 'Mais baratos',
-        sortPriceReverse: 'Mais caros',
-        sortRecent: 'Mais recentes'
+    jp: {
+        sortAlphabetically: 'アルファベット順：A-Z',
+        sortAlphabeticallyReverse: 'アルファベット順：Z-A',
+        sortBestSelling: 'ベストセラー',
+        sortFeatured: 'おすすめ',
+        sortLabel: '並べ替え',
+        sortOldest: '日付:昇順',
+        sortPrice: '価格:昇順',
+        sortPriceReverse: '価格:降順',
+        sortRecent: '日付:降順'
     }
 };

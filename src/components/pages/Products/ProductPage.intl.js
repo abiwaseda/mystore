@@ -7,12 +7,12 @@ export default {
         outOfStock: 'Out of Stock',
         productsList: 'Products'
     },
-    pt: {
-        addToCart: 'Comprar',
-        crossSell: 'Outros produtos desta colecção',
-        descriptionLabel: 'Descrição',
-        homepage: 'Página Principal',
-        outOfStock: 'Esgotado',
-        productsList: 'Produtos'
+    jp: {
+        addToCart: 'カートに追加',
+        crossSell: 'このコレクションの他の商品',
+        descriptionLabel: '説明',
+        homepage: 'ホーム',
+        outOfStock: '在庫切れ',
+        productsList: '商品'
     }
 };

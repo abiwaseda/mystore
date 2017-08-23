@@ -14,19 +14,19 @@ export default {
         upload: 'Upload',
         uploadModalTitle: 'Products Upload'
     },
-    pt: {
-        enabledHeading: 'Activo',
-        homepage: 'Página Principal',
-        imagesHeading: 'Imagens',
-        nameHeading: 'Nome',
-        new: 'Novo',
-        newModalTitle: 'Criar novo produto',
-        noResults: 'Não existem resultados',
-        sectionsHeading: 'Secções',
-        stockHeading: 'Stock',
+    jp: {
+        enabledHeading: '有効',
+        homepage: 'ホームページ',
+        imagesHeading: '画像',
+        nameHeading: '名前',
+        new: '新しい',
+        newModalTitle: '新しい商品を追加',
+        noResults: '結果はありません',
+        sectionsHeading: 'セクション',
+        stockHeading: 'ストック',
         skuHeading: 'SKU',
-        title: 'Produtos',
-        upload: 'Upload',
-        uploadModalTitle: 'Upload de Produtos'
+        title: '商品',
+        upload: 'アップロード',
+        uploadModalTitle: '商品のアップロード'
     }
 };

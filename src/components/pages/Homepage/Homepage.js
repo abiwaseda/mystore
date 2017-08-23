@@ -122,11 +122,11 @@ class Homepage extends React.Component {
             if (this.state.featuredCategories.length > 0 || this.state.featuredCollections.length > 0) {
                 return [
                     {
-                        name: {en: 'Categories', pt: 'Categorias'},
+                        name: {en: 'Categories', jp: 'カテゴリー'},
                         collections: this.state.featuredCategories
                     },
                     {
-                        name: {en: 'Collections', pt: 'Colecções'},
+                        name: {en: 'Collections', jp: 'コレクション'},
                         collections: this.state.featuredCollections
                     }
                 ];
@@ -146,17 +146,6 @@ class Homepage extends React.Component {
         return (
             <div className="homepage">
                 <div className="homepage__cta">
-                    <div className="homepage__featured">
-                        <div className="homepage__featured-block">
-                            <HomepageFeaturedCollection feature={featuredCollections[0]} />
-                            <HomepageFeaturedCollection feature={featuredCollections[1]} />
-                        </div>
-                        <div className="homepage__featured-block">
-                            <HomepageFeaturedCollection feature={featuredCollections[2]} />
-                            <HomepageFeaturedCollection feature={featuredCollections[3]} />
-                        </div>
-                    </div>
-
                     <div className="homepage__banners">
                         <Carousel images={this.state.banners.filter(function (banner) {
                             return banner.body && banner.body.image;
@@ -166,6 +155,20 @@ class Homepage extends React.Component {
                                 link: banner.body.link
                             };
                         })} />
+                    </div>
+                </div>
+                <div className="homepage__featured">
+                    <div className="homepage__featured-block">
+                        <HomepageFeaturedCollection feature={featuredCollections[0]} />
+                        <div className="homepage__featured-padding">
+                        </div>
+                        <HomepageFeaturedCollection feature={featuredCollections[1]} />
+                    </div>
+                    <div className="homepage__featured-block">
+                        <HomepageFeaturedCollection feature={featuredCollections[2]} />
+                        <div className="homepage__featured-padding">
+                        </div>
+                        <HomepageFeaturedCollection feature={featuredCollections[3]} />
                     </div>
                 </div>
 

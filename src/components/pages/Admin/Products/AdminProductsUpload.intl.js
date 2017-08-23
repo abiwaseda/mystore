@@ -7,12 +7,12 @@ export default {
         submit: 'Submit',
         type: 'Content Type'
     },
-    pt: {
-        catalog: 'Catálogo',
-        cancel: 'Cancelar',
-        fieldRequired: 'Este campo é obrigatório',
-        images: 'Imagens',
-        submit: 'Submeter',
-        type: 'Conteúdo'
+    jp: {
+        catalog: 'カタログ',
+        cancel: 'キャンセル',
+        fieldRequired: 'このフィールドは必須です',
+        images: '画像',
+        submit: '提出',
+        type: '内容'
     }
 };

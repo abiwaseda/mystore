@@ -3,7 +3,7 @@ export default {
         title: 'Order Details'
 
     },
-    pt: {
-        title: 'Detalhes da Encomenda'
+    jp: {
+        title: '注文詳細'
     }
 };

@@ -2,6 +2,8 @@
  * Imports
  */
 import React from 'react';
+import StripeCheckout from 'react-stripe-checkout';
+import config from '../../../config';
 
 // Instantiate logger
 let debug = require('debug')('nicistore');
@@ -21,19 +23,19 @@ class Button extends React.Component {
 
     //*** View Controllers ***//
 
-    handleClick = () => {
+    handleClick = (token) => {
         if (this.props.disabled !== true && this.props.loading !== true) {
-            this.props.onClick();
+            this.props.onClick(token);
         }
     };
 
     //*** Template ***//
 
     render() {
-
+        //console.log("key :"+ this.props.pkey);
         let buttonClass = 'button';
 
-        if (['default', 'primary'].indexOf(this.props.type) != -1) {
+        if (['stripe', 'primary'].indexOf(this.props.type) != -1) {
             buttonClass += ` button-${this.props.type}`;
         } else {
             buttonClass += ' button-default';
@@ -58,10 +60,11 @@ class Button extends React.Component {
         }
 
         return (
-            <button className={buttonClass} onClick={this.handleClick}>
-                {this.props.children}
-            </button>
-         );
+
+            <StripeCheckout className={buttonClass} token={this.handleClick}
+                      stripeKey={this.props.pkey}
+                     />
+        );
     }
 }
 

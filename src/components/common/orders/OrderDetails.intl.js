@@ -19,24 +19,24 @@ export default {
         total: 'Total',
         vat: 'VAT'
     },
-    pt: {
-        billingDetails: 'Dados de Faturação',
-        createdAt: 'Criada em',
-        customer: 'Cliente',
+    jp: {
+        billingDetails: '請求情報',
+        createdAt: '作成日時',
+        customer: 'お客様',
         id: 'ID',
-        nameHeading: 'Nome',
-        paymentMethod: 'Método de Pagamento',
-        priceHeading: 'Preço',
-        products: 'Produtos',
-        quantityHeading: 'Qtd.',
-        shipping: 'Portes',
-        shippingCost: 'Custo do Envio',
-        shippingDetails: 'Dados de Envio',
-        shippingMethod: 'Método de Envio',
+        nameHeading: '名前',
+        paymentMethod: '支払い方法',
+        priceHeading: '価格',
+        products: '商品',
+        quantityHeading: '数量.',
+        shipping: '配送',
+        shippingCost: '送料',
+        shippingDetails: '配送情報',
+        shippingMethod: '配送方法',
         skuHeading: 'SKU',
-        status: 'Estado',
-        subTotal: 'Sub-total',
-        total: 'Total',
-        vat: 'IVA'
+        status: 'ステータス',
+        subTotal: '小計',
+        total: '合計',
+        vat: 'VAT'
     }
 };

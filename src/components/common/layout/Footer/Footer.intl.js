@@ -3,12 +3,12 @@ export default {
         infoTitle: 'Info',
         newsletterTitle: 'News & Updates',
         socialTitle: 'Social',
-        storesTitle: 'Our Stores'
+        storesTitle: 'Our Offices'
     },
-    pt: {
-        infoTitle: 'Informações',
-        newsletterTitle: 'Últimas Novidades',
-        socialTitle: 'Siga-nos',
-        storesTitle: 'Lojas'
+    jp: {
+        infoTitle: '情報',
+        newsletterTitle: '最新ニュース',
+        socialTitle: 'ソーシャル',
+        storesTitle: 'オフィス'
     }
 };

@@ -17,22 +17,22 @@ export default {
         title: 'Edit Collection',
         type: 'Type'
     },
-    pt: {
-        back: 'Voltar',
-        category: 'Categoria',
-        collection: 'Colecção',
-        delete: 'Remover',
-        description: 'Descrição',
-        enabled: 'Activada',
-        fieldRequired: 'Este campo é obrigatório',
-        homepage: 'Página Principal',
-        homepageFeatured: 'Destaque Página Principal',
-        mainNavigation: 'Menu Principal',
-        name: 'Nome',
-        parent: 'Colecção Base',
-        save: 'Guardar',
-        sections: 'Destaque nas Secções',
-        title: 'Editar Colecção',
-        type: 'Tipo'
+    jp: {
+        back: '戻る',
+        category: 'カテゴリ',
+        collection: 'カテゴリ',
+        delete: '削除',
+        description: '説明',
+        enabled: '有効',
+        fieldRequired: 'このフィールドは必須です',
+        homepage: 'ホームページ',
+        homepageFeatured: 'ホームページがおすすめ',
+        mainNavigation: 'メインナビゲーション',
+        name: '名前',
+        parent: '収集ベース',
+        save: '保存',
+        sections: 'セクションで紹介',
+        title: '収集編集',
+        type: 'タイプ'
     }
 };

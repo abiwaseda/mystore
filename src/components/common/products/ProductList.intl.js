@@ -2,7 +2,7 @@ export default {
     en: {
         noResults: 'Your selection did not match any results'
     },
-    pt: {
-        noResults: 'A sua selecção não possui produtos associados'
+    jp: {
+        noResults: 'あなたの選択は、関連する商品はありません'
     }
 };

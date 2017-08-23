@@ -63,6 +63,23 @@
         }
     }
 
+    &-stripe {
+        background: $color-primary !important;
+        color: rgb(255, 255, 255) !important;
+    }
+
+    &-stripe span {
+        background-image: initial !important;
+        background-color: $color-primary !important;
+        color: rgb(255, 255, 255) !important;
+        height: 40px !important;
+        line-height: inherit !important;
+        &:hover:not(.button--disabled) {
+            color: #ffffff !important;
+            background: $color-primary-hover !important;
+        }
+    }
+
     &--disabled {
         opacity: 0.3;
     }

@@ -84,6 +84,7 @@ class Application extends React.Component {
     render() {
         
         let intlStore = this.context.getStore(IntlStore);
+        let routeParams = {locale: this.context.getStore(IntlStore).getCurrentLocale()};
 
         // Main navigation menu items
         let collections = this.state.navCollections.map(function (collection) {

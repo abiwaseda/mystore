@@ -6,12 +6,12 @@ export default {
         header: 'Your shopping cart',
         subtotal: 'Subtotal'
     },
-    pt: {
-        checkout: 'Finalizar',
-        continueShopping: 'Continuar as compras',
-        edit: 'Editar',
-        emptyCart: 'O seu carrinho está vazio',
-        header: 'O seu carrinho de compras',
-        subtotal: 'Subtotal'
+    jp: {
+        checkout: '決済',
+        continueShopping: 'ショッピングを続ける',
+        edit: '編集',
+        emptyCart: 'カートは空です',
+        header: 'ショッピングカート',
+        subtotal: '小計'
     }
 };

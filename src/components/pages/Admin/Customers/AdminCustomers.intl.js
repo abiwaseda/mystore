@@ -6,11 +6,11 @@ export default {
         status: 'Status',
         title: 'Customers'
     },
-    pt: {
-        createdAtHeading: 'Data Registo',
-        emailHeading: 'Email',
-        nameHeading: 'Nome',
-        status: 'Estado',
-        title: 'Clientes'
+    jp: {
+        createdAtHeading: '登録済み',
+        emailHeading: 'メール',
+        nameHeading: '名前',
+        status: '状態',
+        title: 'お客様'
     }
 }

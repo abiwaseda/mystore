@@ -3,13 +3,14 @@
  */
 import React from 'react';
 import {FormattedMessage, FormattedNumber} from 'react-intl';
-import StripeCheckout from 'react-stripe-checkout';
+import 'react-stripe-checkout'
 
 // Flux
 import IntlStore from '../../../stores/Application/IntlStore';
 
 // Required components
 import Button from '../../common/buttons/Button';
+import ButtonStripe from '../../common/buttons/ButtonStripe';
 import Heading from '../../common/typography/Heading';
 import OrderSummary from '../../common/orders/OrderSummary';
 import Text from '../../common/typography/Text';
@@ -47,6 +48,7 @@ class CheckoutSummary extends React.Component {
         if (!this.props.checkout.customer && !this.props.checkout.cart.userId) {
             missingInfo.push(`1 - ${intlStore.getMessage(intlData, 'customerDetails')}`);
         }
+        /*
         if (!this.props.checkout.shippingAddress || Object.keys(this.props.checkout.shippingAddress).length === 0) {
             missingInfo.push(`2 - ${intlStore.getMessage(intlData, 'shippingAddress')}`);
         }
@@ -59,6 +61,7 @@ class CheckoutSummary extends React.Component {
         if (!this.props.checkout.paymentMethod) {
             missingInfo.push(`3.1 - ${intlStore.getMessage(intlData, 'paymentMethod')}`);
         }
+        */
 
         //
         // Return
@@ -87,15 +90,12 @@ class CheckoutSummary extends React.Component {
                 }
                 <div className="checkout-summary__row checkout-summary__submit">
                     <div className="checkout-summary__submit-button">
-                        <Button type="primary" disabled={!this.props.readyForCheckout} onClick={this.props.onCheckoutClick}>
-                            <FormattedMessage message={intlStore.getMessage(intlData, 'checkout')} 
-                                              locales={intlStore.getCurrentLocale()} />
-                        </Button>
-                        <h1>Hello Sir</h1>
-                        <StripeCheckout
-                                  token={this.props.onStripeClick}
-                                  stripeKey="pk_test_t0BfAy7tqOvA3O7XYDUMbTJZ"
-                                />
+                        <ButtonStripe
+                            type="stripe"
+                            disabled={!this.props.readyForCheckout}
+                            pkey={this.props.pkey}
+                            onClick={this.props.onStripeClick}>
+                        </ButtonStripe>
                     </div>
                 </div>
             </div>

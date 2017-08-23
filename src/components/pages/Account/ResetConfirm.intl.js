@@ -11,16 +11,16 @@ export default {
         title: 'Change Password',
         unknownError: 'Error. Please contact support'
     },
-    pt: {
-        fieldRequired: 'Este campo é obrigatório',
-        password: 'Nova Password',
-        passwordConfirm: 'Confirmar Password',
-        passwordMismatch: 'As palavras-passe não são iguais',
-        submit: 'Alterar',
-        successModalBody: 'Para aceder à sua conta, faça login com a sua nova password.',
-        successModalContinue: 'Login',
-        successModalTitle: 'Password Actualizada',
-        title: 'Alterar Password',
-        unknownError: 'Erro. Por favor contacte o suporte'
+    jp: {
+        fieldRequired: 'このフィールドは必須です',
+        password: '新しいパスワード',
+        passwordConfirm: 'パスワードの確認',
+        passwordMismatch: 'パスワードは等しくありません',
+        submit: '変更',
+        successModalBody: 'あなたのアカウントにアクセスするには、新しいパスワードでログインしてください',
+        successModalContinue: 'ログイン',
+        successModalTitle: 'パスワード更新しました',
+        title: 'パスワードの更新',
+        unknownError: 'エラーが発生しました、サポートに連絡してください'
     }
 };

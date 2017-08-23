@@ -7,12 +7,12 @@ export default {
         products: 'Products',
         customers: 'Customers'
     },
-    pt: {
-        collections: 'Colecções',
-        contents: 'Conteúdos',
-        dashboard: 'Dashboard',
-        orders: 'Encomendas',
-        products: 'Produtos',
-        customers: 'Clientes'
+    jp: {
+        collections: '収集',
+        contents: 'コンテンツ',
+        dashboard: 'ダッシュボード',
+        orders: '注文',
+        products: '商品',
+        customers: 'お客様'
     }
 };

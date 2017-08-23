@@ -293,7 +293,7 @@ class Login extends React.Component {
                         </div>
                         <div className="login__form-reset">
                             <Link className="login__link" to="reset" params={routeParams}>
-                                <Text>Esqueceu-se da password?</Text>
+                                <Text>Forgot your password?</Text>
                             </Link>
                         </div>
                     </div>

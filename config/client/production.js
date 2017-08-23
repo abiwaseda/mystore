@@ -2,15 +2,16 @@
 // Do not require this directly. Use ./src/config instead.
 export default {
     app: {
-        title: 'NICI Store',
+        title: 'YAMACITY',
         locale: {
-            available: ['en', 'pt'],
-            default: 'pt'
-        }
+            available: ['en', 'jp'],
+            default: 'en'
+        },
+        email: 'support@yamacity.com'
     },
     api: {
         atlas: {
-            baseUrl: 'https://nicistore.com/api/v1'
+            baseUrl: 'http://yamacity.com/api/v1'
         }
     },
     googleAnalytics: {
@@ -32,8 +33,11 @@ export default {
         signupFormPostURL: process.env.MAILCHIMP_SIGNUP_FORM_POST_URL
     },
     switchPayments: {
-        enabled: true,
+        enabled: false,
         environment: 'https://api.switchpayments.com/v2/',
         publicKey: process.env.SWITCH_PUBLIC_KEY
+    },
+    stripePayments: {
+        publicKey: process.env.STRIPE_TEST_PUBLIC_KEY
     }
 };

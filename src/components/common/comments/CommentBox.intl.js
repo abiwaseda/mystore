@@ -9,14 +9,14 @@ export default {
         register: 'create an account',
         submit: 'Submit'
     },
-    pt: {
-        comments: '{total, plural, =1 {# Comentário} other {# Comentários}}',
-        fieldRequired: 'Este campo é obrigatório',
-        leaveComment: 'Deixe o seu comentário',
-        login: 'login',
-        noComments: 'Seja o primeiro a comentar',
-        noUser: 'Para submeter um comentário, primeiro faça {login} ou {register}.',
-        register: 'crie uma conta',
-        submit: 'Submeter'
+    jp: {
+        comments: '{total, plural, =1 {# コメント} other {# コメント}}',
+        fieldRequired: 'このフィールドは必須です',
+        leaveComment: 'コメント',
+        login: 'ログイン',
+        noComments: 'コメントをください',
+        noUser: '{login} か {register}が必要です',
+        register: 'アカウントの登録',
+        submit: '提出'
     }
 };

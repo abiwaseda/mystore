@@ -20,7 +20,9 @@ import clearOrder from '../../../actions/Orders/clearOrder';
 import createCart from '../../../actions/Cart/createCart';
 import createCheckout from '../../../actions/Checkout/createCheckout';
 import createOrder from '../../../actions/Orders/createOrder';
+import createStripeOrder from '../../../actions/Orders/createStripeOrder';
 import updateCheckout from '../../../actions/Checkout/updateCheckout';
+import sendOrderEmail from '../../../actions/Orders/sendOrderEmail';
 
 // Required components
 import Button from '../../common/buttons/Button';
@@ -92,7 +94,8 @@ class Checkout extends React.Component {
         paymentInstrument: {ready: false},
 
         showOrderCreatedModal: false,
-        showOrderErrorModal: false
+        showOrderErrorModal: false,
+        key: config.stripePayments.publicKey
     };
 
     //*** Component Lifecycle ***//
@@ -328,16 +331,42 @@ class Checkout extends React.Component {
         this.context.executeAction(createCart);
     };
 
-    onToken = (token) => {
-      fetch('http://localhost:8000/v1/charges', {
-        method: 'POST',
-        headers: new Headers({
-        'Content-Type': 'application/json; charset=UTF-8'
-         }),
-        body: JSON.stringify(token),
-      }).then(token => {
-        alert(`We are in business, ${token.email}`);
-      });
+    sendOrderCreateEmail = (id) => {
+        let emailInfo = {
+            email: config.app.email,
+            subject: "New Order Received : " + id,
+            template: "order.created"
+
+            }
+        this.context.executeAction(sendOrderEmail, {orderId: id, data: emailInfo});
+    };
+
+    //
+    // Stripe
+    //
+
+    onToken = (tokenn) => {
+    if (tokenn != null){
+        //console.log("token : " + tokenn.id); // for debug, remove in prod
+        let payload = {
+            token: tokenn,
+            checkoutId: this.state.checkout.id,
+            cartAccessToken: this.state.cart.accessToken,
+            paymentDetails: {
+                amount: this.state.checkout.total,
+                currency: this.state.checkout.currency,
+                chargeType: this.state.checkout.paymentMethod,
+                provider: "stripe",
+                instrument: this.state.paymentInstrument.params || {}
+            },
+            mailFun : this.sendOrderCreateEmail
+        };
+
+        this.context.executeAction(createStripeOrder, payload);
+
+      } else {
+        alert('Error Occured payload not received');
+      }
     }
 
     //*** Template ***//
@@ -347,7 +376,6 @@ class Checkout extends React.Component {
         //
         // Helper methods & variables
         //
-
         let intlStore = this.context.getStore(IntlStore);
         let routeParams = {locale: this.context.getStore(IntlStore).getCurrentLocale()}; // Base route params
 
@@ -464,6 +492,7 @@ class Checkout extends React.Component {
                                                          loading={this.state.checkoutLoading}
                                                          error={this.state.checkoutError} />
                             </CheckoutSection>
+                            {/* //Shipping info related tags
                             <CheckoutSection className="checkout__section" number="2" title={intlStore.getMessage(intlData, 'shippingInformation')}>
                                 <CheckoutShippingInformation user={this.state.user}
                                                              address={this.state.checkout.shippingAddress}
@@ -475,6 +504,7 @@ class Checkout extends React.Component {
                                                              onShippingOptionChange={this.handleShippingOptionChange}
                                                              loading={this.state.checkoutLoading} />
                             </CheckoutSection>
+                            {console.log("checkout Option: "+ this.state.paymentOptions[0].id)}
                             <CheckoutSection className="checkout__section" number="3" title={intlStore.getMessage(intlData, 'billingInformation')}>
                                 <CheckoutBillingInformation user={this.state.user}
                                                             address={this.state.checkout.billingAddress}
@@ -489,19 +519,17 @@ class Checkout extends React.Component {
                                                             onPaymentInstrumentChange={this.handlePaymentInstrumentChange}
                                                             loading={this.state.checkoutLoading}  />
                             </CheckoutSection>
+                            */}
+
                         </div>
                         <div className="checkout__right-column">
                             <CheckoutSection className="checkout__section" number="✓" title={intlStore.getMessage(intlData, 'orderSummary')}>
                                 <CheckoutSummary checkout={this.state.checkout}
                                                  useShippingAddressForBilling={this.state.useShippingAddressForBilling}
-                                                 readyForCheckout={this.state.checkout.ready && this.state.paymentInstrument.ready}
+                                                 readyForCheckout={this.state.checkout.ready}
+                                                 pkey={this.state.key}
                                                  onStripeClick={this.onToken}
                                                  onCheckoutClick={this.handleCheckoutClick}/>
-                                                 <StripeCheckout
-                                                           token={this.onToken}
-                                                           stripeKey="pk_test_t0BfAy7tqOvA3O7XYDUMbTJZ"
-                                                         />
-                                
                             </CheckoutSection>
                         </div>
                     </div>

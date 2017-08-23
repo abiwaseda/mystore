@@ -6,11 +6,11 @@ export default {
         myAccount: 'My Account',
         register: 'Register'
     },
-    pt: {
-        hi: 'Olá',
-        login: 'Login',
-        logout: 'Logout',
-        myAccount: 'A Minha Conta',
-        register: 'Registar'
+    jp: {
+        hi: 'Hi',
+        login: 'ログイン',
+        logout: 'ログアウト',
+        myAccount: 'アカウント詳細',
+        register: '登録'
     }
 };

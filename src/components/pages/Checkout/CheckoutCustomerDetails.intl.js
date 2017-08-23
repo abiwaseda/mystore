@@ -6,11 +6,11 @@ export default {
         name: 'Full Name',
         save: 'Save'
     },
-    pt: {
-        edit: 'Editar',
-        email: 'Email',
-        fieldRequired: 'Este campo é obrigatório',
-        name: 'Nome Completo',
-        save: 'Guardar'
+    jp: {
+        edit: '編集',
+        email: 'Eメール',
+        fieldRequired: 'このフィールドは必須です',
+        name: '氏名',
+        save: '保存'
     }
 };

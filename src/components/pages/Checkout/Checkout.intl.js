@@ -13,18 +13,18 @@ export default {
         title: 'Checkout',
         tryAgain: 'Try Again'
     },
-    pt: {
-        billingInformation: 'Detalhes de Faturação',
-        continueShopping: 'Continuar Compras',
-        creatingOrder: 'A criar encomenda',
-        customerDetails: 'Detalhes do Cliente',
-        myAccount: 'A Minha Conta',
-        orderCreatedSuccessfully: 'Irá receber um email de confirmação com os detalhes de pagamento',
-        orderError: 'Aconteceu um erro ao criar a sua encomenda',
-        orderModalTitle: 'Obrigado pela sua compra!',
-        orderSummary: 'Resumo da Encomenda',
-        shippingInformation: 'Detalhes de Envio',
-        title: 'Finalizar Compra',
-        tryAgain: 'Tentar Novamente'
+    jp: {
+        billingInformation: '支払明細',
+        continueShopping: 'ショッピングを続け',
+        creatingOrder: '注文作成中',
+        customerDetails: 'お客様詳細',
+        myAccount: 'アカウント詳細',
+        orderCreatedSuccessfully: '支払いの詳細と確認メールが届きます',
+        orderError: 'ご注文を作成中にエラーが発生しました',
+        orderModalTitle: 'ご購入いただきありがとうございます！',
+        orderSummary: '注文の概要',
+        shippingInformation: '出荷の明細',
+        title: '決済',
+        tryAgain: '再試行'
     }
 };

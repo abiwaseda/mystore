@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "NICI Online Storefront",
   "private": false,
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/yoonic/nicistore.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yoonic/nicistore.git"
   },
   "main": "index.js",
   "scripts": {
@@ -37,6 +37,7 @@
     "react-ga": "1.2.0",
     "react-intl": "1.2.2",
     "react-router": "0.13.3",
+    "react-stripe-checkout": "^2.2.5",
     "sass-loader": "2.0.1",
     "serialize-javascript": "1.2.0",
     "style-loader": "0.12.4",

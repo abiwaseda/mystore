@@ -27,6 +27,7 @@ import Select from '../../../common/forms/Select';
 import Spinner from '../../../common/indicators/Spinner';
 import Textarea from '../../../common/forms/Textarea';
 import ToggleSwitch from '../../../common/buttons/ToggleSwitch';
+import AdminProductsEditTravel from './AdminProductsEditTravel';
 
 // Translation data for this component
 import intlData from './AdminProductsEdit.intl';
@@ -71,7 +72,7 @@ class AdminProductsEdit extends React.Component {
             nextProps._error.validation.keys.forEach(function (field) {
                 if (field === 'description') {
                     fieldErrors['description.en'] = nextProps._error.validation.details[field];
-                    fieldErrors['description.pt'] = nextProps._error.validation.details[field];
+                    fieldErrors['description.jp'] = nextProps._error.validation.details[field];
                 } else {
                     fieldErrors[field] = nextProps._error.validation.details[field];
                 }
@@ -153,6 +154,22 @@ class AdminProductsEdit extends React.Component {
         this.setState({product: product});
     };
 
+    handleOtherDetailsChange = (local, param, value) => {
+        let product = this.state.product;
+        if (typeof(product.others[local]) !== "object") {product.others[local] = {}};
+        product.others[local][param] = value;
+        this.setState({product: product});
+    };
+
+    handleScheduleChange = (idx, local, param, value) => {
+        let product = this.state.product;
+        if (typeof(product.others[local]) !== "object") {product.others[local] = {}};
+        if (typeof(product.others[local].schedule) !== "object") {product.others[local].schedule = []};
+        if (typeof(product.others[local].schedule[idx]) !== "object") {product.others[local].schedule[idx] = {}};
+        product.others[local].schedule[idx][param] = value;
+        this.setState({product: product});
+    };
+
     handleImageLibraryChange = (images) => {
         let product = this.state.product;
         product.images = images;
@@ -169,11 +186,10 @@ class AdminProductsEdit extends React.Component {
         if (!this.state.product.name.en) {
             fieldErrors.nameEN = intlStore.getMessage(intlData, 'fieldRequired');
         }
-        if (!this.state.product.name.pt) {
-            fieldErrors.namePT = intlStore.getMessage(intlData, 'fieldRequired');
+        if (!this.state.product.name.jp) {
+            fieldErrors.nameJP = intlStore.getMessage(intlData, 'fieldRequired');
         }
         this.setState({fieldErrors: fieldErrors});
-
         // Client-side validation checked, trigger update request
         if (Object.keys(fieldErrors).length === 0) {
             let product = this.state.product;
@@ -194,7 +210,8 @@ class AdminProductsEdit extends React.Component {
                     stock: parseInt(product.stock),
                     tags: product.tags,
                     collections: product.collections,
-                    metadata: product.metadata
+                    metadata: product.metadata,
+                    others: product.others
                 }
             });
         }
@@ -301,6 +318,7 @@ class AdminProductsEdit extends React.Component {
                     null
                 }
                 {!this.state.loading && this.state.product ?
+                    <div>
                     <div className="admin-products-edit__form">
                         <div className="admin-products-edit__left-column">
                             <div className="admin-products-edit__form-item">
@@ -309,92 +327,16 @@ class AdminProductsEdit extends React.Component {
                                               onChange={this.handleEnabledChange} />
                             </div>
                             <div className="admin-products-edit__form-item">
-                                <InlineItems>
-                                    <InputField label={intlStore.getMessage(intlData, 'sku')}
-                                                onChange={this.handleFieldChange.bind(null, 'sku')}
-                                                value={this.state.product.sku}
-                                                error={fieldError('sku')} />
-                                    <InputField label={intlStore.getMessage(intlData, 'stock')}
-                                                onChange={this.handleFieldChange.bind(null, 'stock')}
-                                                value={this.state.product.stock}
-                                                error={fieldError('stock')} />
-                                    <Select label={intlStore.getMessage(intlData, 'mainCategory')}
-                                            placeholder
-                                            options={productCategories}
-                                            value={this.state.product.metadata.mainCategory}
-                                            error={fieldError('mainCategory')}
-                                            onChange={this.handleMainCategoryChange} />
-                                    <Select label={intlStore.getMessage(intlData, 'mainCollection')}
-                                            placeholder
-                                            options={productCollections}
-                                            value={this.state.product.metadata.mainCollection}
-                                            error={fieldError('mainCategory')}
-                                            onChange={this.handleMainCollectionChange} />
-                                </InlineItems>
-                            </div>
-                            <div className="admin-products-edit__form-item">
-                                <InlineItems label={<FormattedMessage
-                                    message={intlStore.getMessage(intlData, 'sections')}
-                                    locales={intlStore.getCurrentLocale()} />}>
-                                    <Checkbox label={intlStore.getMessage(intlData, 'homepage')}
-                                              onChange={this.handleSectionChange.bind(null, 'homepage')}
-                                              checked={this.state.product.tags && this.state.product.tags.indexOf('homepage') !== -1} />
-                                </InlineItems>
-                            </div>
-                            <div className="admin-products-edit__form-item">
                                 <InputField label={intlStore.getMessage(intlData, 'name') + ' (EN)'}
                                             onChange={this.handleNameChange.bind(null, 'en')}
                                             value={this.state.product.name.en}
                                             error={fieldError('nameEN')} />
                             </div>
                             <div className="admin-products-edit__form-item">
-                                <InputField label={intlStore.getMessage(intlData, 'name') + ' (PT)'}
-                                            onChange={this.handleNameChange.bind(null, 'pt')}
-                                            value={this.state.product.name.pt}
-                                            error={fieldError('namePT')} />
-                            </div>
-                            <div className="admin-products-edit__form-item">
-                                <Textarea label={intlStore.getMessage(intlData, 'description') + ' (EN)'}
-                                          rows="5"
-                                          onChange={this.handleIntlFieldChange.bind(null, 'description', 'en')}
-                                          value={this.state.product.description ? this.state.product.description.en : null}
-                                          error={fieldError('description.en')} />
-                            </div>
-                            <div className="admin-products-edit__form-item">
-                                <Textarea label={intlStore.getMessage(intlData, 'description') + ' (PT)'}
-                                          rows="5"
-                                          onChange={this.handleIntlFieldChange.bind(null, 'description', 'pt')}
-                                          value={this.state.product.description ? this.state.product.description.pt : null}
-                                          error={fieldError('description.pt')} />
-                            </div>
-                            <div className="admin-products-edit__form-item">
-                                <InlineItems label={<FormattedMessage
-                                    message={intlStore.getMessage(intlData, 'pricing')}
-                                    locales={intlStore.getCurrentLocale()} />}>
-                                    <InputField label={intlStore.getMessage(intlData, 'currency')}
-                                                labelSize="small" labelWeight="normal"
-                                                value={this.state.product.pricing.currency}
-                                                error={fieldError('pricing.currency')} />
-                                    <InputField label={intlStore.getMessage(intlData, 'listPrice')}
-                                                labelSize="small" labelWeight="normal"
-                                                value={this.state.product.pricing.list}
-                                                onChange={this.handlePricingChange.bind(null, 'list')}
-                                                error={fieldError('pricing.list')} />
-                                    <InputField label={intlStore.getMessage(intlData, 'retailPrice')}
-                                                labelSize="small" labelWeight="normal"
-                                                value={this.state.product.pricing.retail}
-                                                onChange={this.handlePricingChange.bind(null, 'retail')}
-                                                error={fieldError('pricing.retail')} />
-                                    <InputField label={intlStore.getMessage(intlData, 'vat')}
-                                                labelSize="small" labelWeight="normal"
-                                                value={this.state.product.pricing.vat}
-                                                onChange={this.handlePricingChange.bind(null, 'vat')}
-                                                error={fieldError('pricing.vat')} />
-                                </InlineItems>
-                            </div>
-                            <div className="admin-products-edit__form-item">
-                                <ImageLibraryManager images={this.state.product.images}
-                                                     onChange={this.handleImageLibraryChange} />
+                                <InputField label={intlStore.getMessage(intlData, 'name') + ' (JP)'}
+                                            onChange={this.handleNameChange.bind(null, 'jp')}
+                                            value={this.state.product.name.jp}
+                                            error={fieldError('nameJP')} />
                             </div>
                         </div>
                         <div className="admin-products-edit__right-column">
@@ -414,7 +356,109 @@ class AdminProductsEdit extends React.Component {
                                                       locales={intlStore.getCurrentLocale()} />
                                 </CollectionPicker>
                             </div>
+                            <div className="admin-products-edit__form-item">
+                                <InlineItems label={<FormattedMessage
+                                    message={intlStore.getMessage(intlData, 'sections')}
+                                    locales={intlStore.getCurrentLocale()} />}>
+                                    <Checkbox label={intlStore.getMessage(intlData, 'homepage')}
+                                              onChange={this.handleSectionChange.bind(null, 'homepage')}
+                                              checked={this.state.product.tags && this.state.product.tags.indexOf('homepage') !== -1} />
+                                </InlineItems>
+                            </div>
                         </div>
+                    </div>
+                    <div className="admin-products-edit__center-column">
+                        <div className="admin-products-edit__form-item">
+                            <InlineItems>
+                                <InputField label={intlStore.getMessage(intlData, 'sku')}
+                                            onChange={this.handleFieldChange.bind(null, 'sku')}
+                                            value={this.state.product.sku}
+                                            error={fieldError('sku')} />
+                                <InputField label={intlStore.getMessage(intlData, 'stock')}
+                                            onChange={this.handleFieldChange.bind(null, 'stock')}
+                                            value={this.state.product.stock}
+                                            error={fieldError('stock')} />
+                                <Select label={intlStore.getMessage(intlData, 'mainCategory')}
+                                        placeholder
+                                        options={productCategories}
+                                        value={this.state.product.metadata.mainCategory}
+                                        error={fieldError('mainCategory')}
+                                        onChange={this.handleMainCategoryChange} />
+                                <Select label={intlStore.getMessage(intlData, 'mainCollection')}
+                                        placeholder
+                                        options={productCollections}
+                                        value={this.state.product.metadata.mainCollection}
+                                        error={fieldError('mainCategory')}
+                                        onChange={this.handleMainCollectionChange} />
+                            </InlineItems>
+                        </div>
+
+                        <div className="admin-products-edit__form-item">
+                            <Textarea label={intlStore.getMessage(intlData, 'description') + ' (EN)'}
+                                      rows="5"
+                                      onChange={this.handleIntlFieldChange.bind(null, 'description', 'en')}
+                                      value={this.state.product.description ? this.state.product.description.en : null}
+                                      error={fieldError('description.en')} />
+                        </div>
+                        <div className="admin-products-edit__form-item">
+                            <Textarea label={intlStore.getMessage(intlData, 'description') + ' (JP)'}
+                                      rows="5"
+                                      onChange={this.handleIntlFieldChange.bind(null, 'description', 'jp')}
+                                      value={this.state.product.description ? this.state.product.description.jp : null}
+                                      error={fieldError('description.jp')} />
+                        </div>
+                        <div className="admin-products-edit__form-item">
+                            <InlineItems label={<FormattedMessage
+                                message={intlStore.getMessage(intlData, 'pricing')}
+                                locales={intlStore.getCurrentLocale()} />}>
+                                <InputField label={intlStore.getMessage(intlData, 'currency')}
+                                            labelSize="small" labelWeight="normal"
+                                            value={this.state.product.pricing.currency}
+                                            error={fieldError('pricing.currency')} />
+                                <InputField label={intlStore.getMessage(intlData, 'listPrice')}
+                                            labelSize="small" labelWeight="normal"
+                                            value={this.state.product.pricing.list}
+                                            onChange={this.handlePricingChange.bind(null, 'list')}
+                                            error={fieldError('pricing.list')} />
+                                <InputField label={intlStore.getMessage(intlData, 'retailPrice')}
+                                            labelSize="small" labelWeight="normal"
+                                            value={this.state.product.pricing.retail}
+                                            onChange={this.handlePricingChange.bind(null, 'retail')}
+                                            error={fieldError('pricing.retail')} />
+                                <InputField label={intlStore.getMessage(intlData, 'vat')}
+                                            labelSize="small" labelWeight="normal"
+                                            value={this.state.product.pricing.vat}
+                                            onChange={this.handlePricingChange.bind(null, 'vat')}
+                                            error={fieldError('pricing.vat')} />
+                            </InlineItems>
+                        </div>
+                        {this.state.product.others ?
+                        <div className="admin-products-edit__form-item">
+                            <AdminProductsEditTravel
+                                others={this.state.product.others.en}
+                                schedule={this.state.product.others.en.schedule}
+                                local="en"
+                                nameTag=" (EN)"
+                                onChange={this.handleOtherDetailsChange}
+                                onChangeSchedule={this.handleScheduleChange}
+                                fieldError={fieldError} />
+                            <AdminProductsEditTravel
+                                others={this.state.product.others.jp}
+                                schedule={this.state.product.others.jp.schedule}
+                                local="jp"
+                                nameTag=" (JP)"
+                                onChange={this.handleOtherDetailsChange}
+                                onChangeSchedule={this.handleScheduleChange}
+                                fieldError={fieldError} />
+                        </div>
+                            :
+                            null
+                        }
+                        <div className="admin-products-edit__form-item">
+                            <ImageLibraryManager images={this.state.product.images}
+                                                 onChange={this.handleImageLibraryChange} />
+                        </div>
+                    </div>
                     </div>
                     :
                     null

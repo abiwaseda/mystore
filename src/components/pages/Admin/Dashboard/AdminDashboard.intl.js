@@ -4,9 +4,9 @@ export default {
         mainNavigationSettingsTitle: 'Main Navigation Order',
         title: 'Dashboard'
     },
-    pt: {
-        homepageSettingsTitle: 'Configurações da Página Principal',
-        mainNavigationSettingsTitle: 'Ordernar Menu Principal',
-        title: 'Dashboard'
+    jp: {
+        homepageSettingsTitle: 'ホームページの設定',
+        mainNavigationSettingsTitle: 'メインナビゲーション注文',
+        title: 'ダッシュボード'
     }
 };

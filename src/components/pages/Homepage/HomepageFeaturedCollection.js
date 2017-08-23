@@ -39,7 +39,13 @@ class HomepageFeaturedCollection extends React.Component {
                 <div className="homepage-featured-collection">
                     <Link to={this.props.feature.link.to} params={this.props.feature.link.params}>
                         <img className="homepage-featured-collection__image" src={this.props.feature.img.src} alt={this.props.feature.img.alt} />
+                        <h2 className="homepage-featured-collection__title">
+                            <FormattedMessage
+                                message={intlStore.getMessage(this.props.feature.name)}
+                                locales={intlStore.getCurrentLocale()} />
+                        </h2>
                     </Link>
+
                 </div>
             );
         } else if (this.props.feature) {

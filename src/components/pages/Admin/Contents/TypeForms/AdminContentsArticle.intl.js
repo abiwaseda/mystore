@@ -4,9 +4,9 @@ export default {
         preview: 'Preview',
         summary: 'Summary'
     },
-    pt: {
-        edit: 'Editar',
-        preview: 'Pré-Visualizar',
-        summary: 'Resumo'
+    jp: {
+        edit: '編集',
+        preview: 'プレビュー',
+        summary: '一覧'
     }
 };

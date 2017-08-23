@@ -7,12 +7,12 @@ export default {
         myAccount: 'My Account',
         register: 'Register'
     },
-    pt: {
-        hi: 'Olá',
-        login: 'Login',
-        logout: 'Logout',
-        homepage: 'Página Principal',
-        myAccount: 'A Minha Conta',
-        register: 'Registar'
+    jp: {
+        hi: 'Hi',
+        login: 'ログイン',
+        logout: 'ログアウト',
+        homepage: 'ホームページ',
+        myAccount: 'アカウント',
+        register: '登録'
     }
 };

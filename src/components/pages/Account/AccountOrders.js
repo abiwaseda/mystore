@@ -69,7 +69,7 @@ class AccountOrders extends React.Component {
                     <OrderStatus status={order.status} />,
                     <span className="account-orders__link">
                         <Link to="account-order-details" params={Object.assign({orderId: order.id}, routeParams)}>
-                            <Text size="small">Ver Detalhes</Text>
+                            <Text size="small">Detail</Text>
                         </Link>
                     </span>
                 ]
