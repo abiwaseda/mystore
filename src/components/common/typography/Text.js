@@ -53,9 +53,9 @@ class Text extends React.Component {
         // Return
         //
         return (
-            <span className={textClass}>
+            <pre className={textClass}>
                 {this.props.children}
-            </span>
+            </pre>
         );
     }
 }

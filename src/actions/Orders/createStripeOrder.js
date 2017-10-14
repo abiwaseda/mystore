@@ -75,7 +75,7 @@ export default function createStripeOrder(context, payload, done) {
             payload.token.payType = "create";
             context.api.orders.createStripeOrder(payload.token
              ).then(function successFn() {
-                payload.mailFun(order.id);
+                // payload.mailFun(order.id);
                 dispatchOrderCreatedSuccessfully();
             }, function errorFn() {
                 dispatchOrderCreatedSuccessfully();
