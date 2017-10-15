@@ -11,7 +11,7 @@ export default {
     },
     api: {
         atlas: {
-            baseUrl: 'http://yamacity.com/api/v1'
+            baseUrl: 'https://yamacity.com/api/v1'
         }
     },
     googleAnalytics: {

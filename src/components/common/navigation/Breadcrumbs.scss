@@ -6,7 +6,7 @@
 }
 
 .breadcrumbs__list-item {
-    display: inline;
+    display: inline-flex;
 
     &:not(:first-child) {
         margin-left: 15px;
